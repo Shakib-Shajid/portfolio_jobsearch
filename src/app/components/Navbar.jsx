@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
@@ -8,7 +9,7 @@ const Navbar = () => {
                     <a className="btn btn-ghost text-xl">Portfolio & Job Search</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                   <a>Home</a>
+                   <Link href="/">Home</Link>
                 </div>
                 <div className="flex gap-2 navbar-end">
                     <div className="dropdown dropdown-end">
@@ -22,9 +23,9 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Profile</a></li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
+                            <li><Link href="/profile">Profile</Link></li>
+                            <li><Link href="/">Settings</Link></li>
+                            <li><Link href="/">Logout</Link></li>
                         </ul>
                     </div>
                 </div>
