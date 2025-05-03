@@ -1,0 +1,41 @@
+[
+    {
+        "company": "Microsoft",
+        "designation": "Software Engineer",
+        "duration": "Jan 2020 – Dec 2022",
+        "technologies": ["C#", ".NET", "Azure", "Azure DevOps", "CI/CD", "Git", "SQL Server"],
+        "responsibilities": [
+            "Developed scalable web applications using .NET and Azure services.",
+            "Collaborated with cross-functional teams to implement new features.",
+            "Optimized application performance and reduced load times by 30%.",
+            "Implemented CI/CD pipelines using Azure DevOps to streamline deployments.",
+            "Led code reviews and mentored junior developers to uphold code quality standards."
+        ]
+    },
+    {
+        "company": "Google",
+        "designation": "Frontend Developer",
+        "duration": "Feb 2018 – Dec 2019",
+        "technologies": ["React.js", "Redux", "JavaScript", "HTML", "CSS", "REST API", "Webpack"],
+        "responsibilities": [
+            "Designed and developed responsive user interfaces with React.js.",
+            "Worked closely with UX designers to improve user experience.",
+            "Maintained component libraries and enforced UI consistency across products.",
+            "Optimized web performance, improving load times by 25%.",
+            "Integrated REST APIs and ensured smooth data flow using Redux."
+        ]
+    },
+    {
+        "company": "Amazon",
+        "designation": "Backend Developer",
+        "duration": "Mar 2016 – Jan 2018",
+        "technologies": ["Node.js", "AWS Lambda", "MongoDB", "PostgreSQL", "Docker", "Jenkins", "Express"],
+        "responsibilities": [
+            "Built and maintained microservices using Node.js and AWS Lambda.",
+            "Integrated third-party APIs and improved data handling efficiency.",
+            "Ensured system reliability and uptime through robust testing and monitoring.",
+            "Designed scalable database schemas using MongoDB and PostgreSQL.",
+            "Automated deployment processes with Docker and Jenkins."
+        ]
+    }
+]

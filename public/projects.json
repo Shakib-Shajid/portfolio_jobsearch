@@ -1,0 +1,64 @@
+[
+    {
+        "name": "SmartSchool - School Management System",
+        "technologies": [
+            "Next.js 13 (App Router)",
+            "Tailwind CSS",
+            "DaisyUI",
+            "Express.js",
+            "MongoDB",
+            "JWT"
+        ],
+        "github": "https://github.com/yourusername/smartschool",
+        "live": "https://smartschool.vercel.app",
+        "features": [
+            "Multi-role login system (Superadmin, Admin, Teacher, Accountant)",
+            "Login/Register with JWT Authentication",
+            "Fee and Salary Management System",
+            "Result Management for Students",
+            "Secure API Integration with Express Backend",
+            "Firebase for login OTP (optional)"
+        ]
+    },
+    {
+        "name": "CoinPredictor - Crypto Price Prediction Tool",
+        "technologies": [
+            "Next.js 13",
+            "Tailwind CSS",
+            "Chart.js",
+            "Binance API",
+            "Python (Flask API)",
+            "JWT"
+        ],
+        "github": "https://github.com/yourusername/coinpredictor",
+        "live": "https://coinpredictor.vercel.app",
+        "features": [
+            "Search for any coin and get real-time predictions",
+            "Indicators used: RSI, MACD, Moving Averages, Support/Resistance",
+            "Multiple timeframes supported (1m to 2h)",
+            "JWT-based secure login",
+            "Telegram alerts integration (coming soon)",
+            "Python backend for machine learning model"
+        ]
+    },
+    {
+        "name": "AuthDash - Custom Role Based Frontend Dashboard for WordPress",
+        "technologies": [
+            "React.js",
+            "Tailwind CSS",
+            "WordPress REST API",
+            "JWT",
+            "PHP",
+            "MySQL"
+        ],
+        "github": "https://github.com/yourusername/authdash",
+        "live": "https://authdash-demo.vercel.app",
+        "features": [
+            "Drag & drop dashboard builder for WordPress roles (Author, Student, Subscriber)",
+            "Login/Register with JWT Auth connected to WordPress backend",
+            "Secure role-based access to different sections",
+            "Dynamic widget rendering from WordPress API",
+            "Built as a WordPress plugin with frontend in React"
+        ]
+    }
+]

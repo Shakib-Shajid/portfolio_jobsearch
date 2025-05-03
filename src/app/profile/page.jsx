@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
+import experiences from "../../../public/experiences.json"
+import projects from "../../../public/projects.json"
 
 const page = () => {
 
@@ -20,98 +22,6 @@ const page = () => {
         "System Design",
         "Cloud Platforms (AWS/Azure/GCP)"
     ]
-
-    const experiences = [
-        {
-            company: "Microsoft",
-            designation: "Software Engineer",
-            duration: "Jan 2020 – Dec 2022",
-            technologies: ["C#", ".NET", "Azure", "Azure DevOps", "CI/CD", "Git", "SQL Server"],
-            responsibilities: [
-                "Developed scalable web applications using .NET and Azure services.",
-                "Collaborated with cross-functional teams to implement new features.",
-                "Optimized application performance and reduced load times by 30%.",
-                "Implemented CI/CD pipelines using Azure DevOps to streamline deployments.",
-                "Led code reviews and mentored junior developers to uphold code quality standards."
-            ]
-        },
-        {
-            company: "Google",
-            designation: "Frontend Developer",
-            duration: "Feb 2018 – Dec 2019",
-            technologies: ["React.js", "Redux", "JavaScript", "HTML", "CSS", "REST API", "Webpack"],
-            responsibilities: [
-                "Designed and developed responsive user interfaces with React.js.",
-                "Worked closely with UX designers to improve user experience.",
-                "Maintained component libraries and enforced UI consistency across products.",
-                "Optimized web performance, improving load times by 25%.",
-                "Integrated REST APIs and ensured smooth data flow using Redux."
-            ]
-        },
-        {
-            company: "Amazon",
-            designation: "Backend Developer",
-            duration: "Mar 2016 – Jan 2018",
-            technologies: ["Node.js", "AWS Lambda", "MongoDB", "PostgreSQL", "Docker", "Jenkins", "Express"],
-            responsibilities: [
-                "Built and maintained microservices using Node.js and AWS Lambda.",
-                "Integrated third-party APIs and improved data handling efficiency.",
-                "Ensured system reliability and uptime through robust testing and monitoring.",
-                "Designed scalable database schemas using MongoDB and PostgreSQL.",
-                "Automated deployment processes with Docker and Jenkins."
-            ]
-        }
-    ];
-
-
-
-    const projects = [
-        {
-            "name": "SmartSchool - School Management System",
-            "technologies": ["Next.js 13 (App Router)", "Tailwind CSS", "DaisyUI", "Express.js", "MongoDB", "JWT"],
-            "github": "https://github.com/yourusername/smartschool",
-            "live": "https://smartschool.vercel.app",
-            "features": [
-                "Multi-role login system (Superadmin, Admin, Teacher, Accountant)",
-                "Login/Register with JWT Authentication",
-                "Fee and Salary Management System",
-                "Result Management for Students",
-                "Secure API Integration with Express Backend",
-                "Firebase for login OTP (optional)"
-            ]
-        },
-        {
-            "name": "CoinPredictor - Crypto Price Prediction Tool",
-            "technologies": ["Next.js 13", "Tailwind CSS", "Chart.js", "Binance API", "Python (Flask API)", "JWT"],
-            "github": "https://github.com/yourusername/coinpredictor",
-            "live": "https://coinpredictor.vercel.app",
-            "features": [
-                "Search for any coin and get real-time predictions",
-                "Indicators used: RSI, MACD, Moving Averages, Support/Resistance",
-                "Multiple timeframes supported (1m to 2h)",
-                "JWT-based secure login",
-                "Telegram alerts integration (coming soon)",
-                "Python backend for machine learning model"
-            ]
-        },
-        {
-            "name": "AuthDash - Custom Role Based Frontend Dashboard for WordPress",
-            "technologies": ["React.js", "Tailwind CSS", "WordPress REST API", "JWT", "PHP", "MySQL"],
-            "github": "https://github.com/yourusername/authdash",
-            "live": "https://authdash-demo.vercel.app",
-            "features": [
-                "Drag & drop dashboard builder for WordPress roles (Author, Student, Subscriber)",
-                "Login/Register with JWT Auth connected to WordPress backend",
-                "Secure role-based access to different sections",
-                "Dynamic widget rendering from WordPress API",
-                "Built as a WordPress plugin with frontend in React"
-            ]
-        }
-    ]
-
-
-
-
 
     return (
         <div>
@@ -194,7 +104,7 @@ const page = () => {
 
 
             <div className='w-3/4 md:w-3/4 lg:w-2/3 mx-auto'>
-                <h3 className='text-5xl font-bold text-info text-center my-3'>Experience</h3>
+                <h3 className='text-5xl font-bold text-violet-600 text-center my-3'>Experience</h3>
 
                 {
                     experiences.map((experience, index) =>
@@ -246,16 +156,16 @@ const page = () => {
             </div>
 
             <div className='w-3/4 md:w-3/4 lg:w-2/3 mx-auto'>
-                <h3 className='text-5xl font-bold  text-center my-10 text-green-700'>Projects</h3>
+                <h3 className='text-5xl font-bold  text-center my-10 text-green-500'>Projects</h3>
 
                 {
                     projects.map((project, index) =>
                         <div className="card bg-base-100 w-full shadow-2xl my-5 border-l-4 border-t-4 border-green-500" key={index}>
                             <div className="card-body ">
                                 <div className='flex flex-col md:flex-row items-baseline'>
-                                    <p className='text-xs md:text-2xl font-bold text-green-600 max-w-lg'>{project.name} </p>
+                                    <p className='text-xs md:text-2xl font-bold text-green-500 max-w-lg'>{project.name} </p>
                                     <div className='flex gap-10 lg:ml-16'>
-                                        <p className='text-xs md:text-sm text-indigo-400 border-b-2 font-extrabold'><Link href={project.github} target="_blank">Github Link</Link></p>
+                                        <p className='text-xs md:text-sm text-indigo-400 border-b-2 font-extrabold'><Link href={project.github} target="_blank">GitHub Link</Link></p>
                                         <p className='text-xs md:text-sm text-indigo-400 border-b-2 font-extrabold'><Link href={project.live} target="_blank">Live Link</Link></p>
                                     </div>
                                 </div>
