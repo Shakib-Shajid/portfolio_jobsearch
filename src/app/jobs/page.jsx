@@ -137,6 +137,7 @@ const page = () => {
 
 
 
+
   return (
     <div>
       <h3 className='text-center font-bold text-2xl my-10'>Find Jobs</h3>
