@@ -2,26 +2,10 @@ import Link from 'next/link';
 import React from 'react';
 import experiences from "../../../public/experiences.json"
 import projects from "../../../public/projects.json"
+import skills from "../../../public/skills.json"
+
 
 const page = () => {
-
-    const skills = [
-        "TypeScript",
-        "React",
-        "Next.js",
-        "Node.js",
-        "Express.js",
-        "NestJS",
-        "GraphQL",
-        "MongoDB",
-        "PostgreSQL",
-        "Docker",
-        "Kubernetes",
-        "CI/CD Pipelines",
-        "Microservices Architecture",
-        "System Design",
-        "Cloud Platforms (AWS/Azure/GCP)"
-    ]
 
     return (
         <div>

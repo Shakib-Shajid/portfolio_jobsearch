@@ -25,3 +25,6 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.radial-progress.no-dot::after {
+  display: none !important;
+}
