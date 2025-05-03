@@ -21,8 +21,39 @@ const page = () => {
         "Cloud Platforms (AWS/Azure/GCP)"
     ]
 
-    
-      
+    const experiences = [
+        {
+            "company": "Microsoft",
+            "designation": "Software Engineer",
+            "duration": "Jan 2020 – Dec 2022",
+            "responsibilities": [
+                "Developed scalable web applications using .NET and Azure services.",
+                "Collaborated with cross-functional teams to implement new features.",
+                "Optimized application performance and reduced load times by 30%."
+            ]
+        },
+        {
+            "company": "Google",
+            "designation": "Frontend Developer",
+            "duration": "Feb 2018 – Dec 2019",
+            "responsibilities": [
+                "Designed and developed responsive user interfaces with React.js.",
+                "Worked closely with UX designers to improve user experience.",
+                "Maintained component libraries and enforced UI consistency across products."
+            ]
+        },
+        {
+            "company": "Amazon",
+            "designation": "Backend Developer",
+            "duration": "Mar 2016 – Jan 2018",
+            "responsibilities": [
+                "Built and maintained microservices using Node.js and AWS Lambda.",
+                "Integrated third-party APIs and improved data handling efficiency.",
+                "Ensured system reliability and uptime through robust testing and monitoring."
+            ]
+        }
+    ]
+
 
 
     return (
@@ -36,7 +67,7 @@ const page = () => {
                             User Profile
                         </h3>
                         <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                            This is some information about the user.
+                            Information about the user.
                         </p>
                     </div>
                     <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
@@ -108,38 +139,43 @@ const page = () => {
             <div className='w-3/4 md:w-2/3 mx-auto'>
                 <h3 className='text-3xl font-bold my-3 text-info'>Experience:</h3>
 
-                {/* {
-                    myPost.map(post => */}
-                {/* <div >
-                            <div className="card bg-base-100 w-full shadow-xl my-5 border-l-4 border-indigo-500">
-                                <div className="card-body ">
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur non praesentium nemo aut neque error expedita quis quidem tempore possimus.</p>
-                                  
-                                    <div className="dropdown dropdown-bottom dropdown-end absolute top-0 right-0 mx-2">
-                                        <div tabIndex={0} role="button" className="">
-                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
-                                                <path d="M2.25 12C2.25 10.4812 3.48122 9.25 5 9.25C6.51878 9.25 7.75 10.4812 7.75 12C7.75 13.5188 6.51878 14.75 5 14.75C3.48122 14.75 2.25 13.5188 2.25 12ZM5 10.75C4.30964 10.75 3.75 11.3096 3.75 12C3.75 12.6904 4.30964 13.25 5 13.25C5.69036 13.25 6.25 12.6904 6.25 12C6.25 11.3096 5.69036 10.75 5 10.75Z" fill="#1C274C" />
-                                                <path d="M9.25 12C9.25 10.4812 10.4812 9.25 12 9.25C13.5188 9.25 14.75 10.4812 14.75 12C14.75 13.5188 13.5188 14.75 12 14.75C10.4812 14.75 9.25 13.5188 9.25 12ZM12 10.75C11.3096 10.75 10.75 11.3096 10.75 12C10.75 12.6904 11.3096 13.25 12 13.25C12.6904 13.25 13.25 12.6904 13.25 12C13.25 11.3096 12.6904 10.75 12 10.75Z" fill="#1C274C" />
-                                                <path d="M19 9.25C17.4812 9.25 16.25 10.4812 16.25 12C16.25 13.5188 17.4812 14.75 19 14.75C20.5188 14.75 21.75 13.5188 21.75 12C21.75 10.4812 20.5188 9.25 19 9.25ZM17.75 12C17.75 11.3096 18.3096 10.75 19 10.75C19.6904 10.75 20.25 11.3096 20.25 12C20.25 12.6904 19.6904 13.25 19 13.25C18.3096 13.25 17.75 12.6904 17.75 12Z" fill="#1C274C" />
-                                            </svg>
-                                        </div>
+                {
+                    experiences.map((experience, index) =>
+                        <div className="card bg-base-100 w-full shadow-xl my-5 border-l-4 border-indigo-500" key={index}>
+                            <div className="card-body ">
+                                <div className='flex flex-col md:flex-row items-baseline'>
+                                    <p className='text-xs md:text-2xl font-bold text-violet-600'>{experience.designation} </p>
+                                    <p className='text-xs md:text-sm font-bold text-indigo-400 text-end'>{experience.duration}</p>
+                                </div>
+                                <p className='text-lg font-bold text-green-400'>{experience.company}</p>
+                                <div className='space-y-2'>{experience.responsibilities.map((result, index) =>
+                                    <p className='text-gray-800' key={index}>- {result}</p>
+                                )}</div>
 
-                                       <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                                            <li>
-                                                <Link to={`/updatePost/${post._id}`}>Edit</Link>
-                                            </li>
-                                            <li>
-                                                <button onClick={() => handleDelete(post._id)}>Delete</button>
-                                            </li>
-                                        </ul> 
-
+                                {/* <div className="dropdown dropdown-bottom dropdown-end absolute top-0 right-0 mx-2">
+                                    <div tabIndex={0} role="button" className="">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+                                            <path d="M2.25 12C2.25 10.4812 3.48122 9.25 5 9.25C6.51878 9.25 7.75 10.4812 7.75 12C7.75 13.5188 6.51878 14.75 5 14.75C3.48122 14.75 2.25 13.5188 2.25 12ZM5 10.75C4.30964 10.75 3.75 11.3096 3.75 12C3.75 12.6904 4.30964 13.25 5 13.25C5.69036 13.25 6.25 12.6904 6.25 12C6.25 11.3096 5.69036 10.75 5 10.75Z" fill="#1C274C" />
+                                            <path d="M9.25 12C9.25 10.4812 10.4812 9.25 12 9.25C13.5188 9.25 14.75 10.4812 14.75 12C14.75 13.5188 13.5188 14.75 12 14.75C10.4812 14.75 9.25 13.5188 9.25 12ZM12 10.75C11.3096 10.75 10.75 11.3096 10.75 12C10.75 12.6904 11.3096 13.25 12 13.25C12.6904 13.25 13.25 12.6904 13.25 12C13.25 11.3096 12.6904 10.75 12 10.75Z" fill="#1C274C" />
+                                            <path d="M19 9.25C17.4812 9.25 16.25 10.4812 16.25 12C16.25 13.5188 17.4812 14.75 19 14.75C20.5188 14.75 21.75 13.5188 21.75 12C21.75 10.4812 20.5188 9.25 19 9.25ZM17.75 12C17.75 11.3096 18.3096 10.75 19 10.75C19.6904 10.75 20.25 11.3096 20.25 12C20.25 12.6904 19.6904 13.25 19 13.25C18.3096 13.25 17.75 12.6904 17.75 12Z" fill="#1C274C" />
+                                        </svg>
                                     </div>
 
-                                </div>
+                                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                            <li>
+                                                <Link to={`/updatePost/${experience.id}`}>Edit</Link>
+                                            </li>
+                                            <li>
+                                                <button onClick={() => handleDelete(experience.id)}>Delete</button>
+                                            </li>
+                                        </ul>
+
+                                </div> */}
+
                             </div>
-                        </div> */}
-                {/* )
-                } */}
+                        </div>
+                    )
+                }
 
 
             </div>
