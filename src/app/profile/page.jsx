@@ -3,13 +3,35 @@ import React from 'react';
 
 const page = () => {
 
+    const skills = [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "NestJS",
+        "GraphQL",
+        "MongoDB",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "CI/CD Pipelines",
+        "Microservices Architecture",
+        "System Design",
+        "Cloud Platforms (AWS/Azure/GCP)"
+    ]
+
+    
+      
+
+
     return (
         <div>
 
-            <div className='flex gap-5 flex-col md:flex-row mt-5 justify-center w-[80%] mx-auto md:w-full'>
-                <img src="https://rb.gy/c28gf3" className="max-w-sm rounded-lg shadow-2xl" alt="" />
-                <div className="bg-white overflow-hidden shadow rounded-lg border md:w-1/3">
-                    <div className="px-4 py-5 sm:px-6">
+            <div className='flex gap-5 flex-col md:flex-row mt-5 justify-center w-[80%] mx-auto md:w-[90%] lg:w-full'>
+                <img src="https://rb.gy/c28gf3" className="max-w-sm w-80 lg:w-full rounded-lg shadow-2xl" alt="" />
+                <div className="bg-white overflow-hidden shadow rounded-lg border md:w-full lg:w-1/3">
+                    <div className="px-4 py-5 sm:px-4">
                         <h3 className="text-lg leading-6 font-medium text-gray-900">
                             User Profile
                         </h3>
@@ -70,6 +92,56 @@ const page = () => {
                         </dl>
                     </div>
                 </div>
+            </div>
+
+            <p className=' text-3xl font-bold my-10 w-3/4 lg:w-2/3 mx-auto'><span className='block mb-2 font-bold text-green-500'>My Skills:</span>
+                {skills.map((skill, index) => (
+                    <span key={index} className='text-gray-500 border rounded-2xl px-2 py-1 mr-1 inline-flex text-sm my-2 hover:bg-accent hover:text-white'>
+                        {skill}
+                    </span>
+                ))}
+            </p>
+
+
+
+
+            <div className='w-3/4 md:w-2/3 mx-auto'>
+                <h3 className='text-3xl font-bold my-3 text-info'>Experience:</h3>
+
+                {/* {
+                    myPost.map(post => */}
+                {/* <div >
+                            <div className="card bg-base-100 w-full shadow-xl my-5 border-l-4 border-indigo-500">
+                                <div className="card-body ">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur non praesentium nemo aut neque error expedita quis quidem tempore possimus.</p>
+                                  
+                                    <div className="dropdown dropdown-bottom dropdown-end absolute top-0 right-0 mx-2">
+                                        <div tabIndex={0} role="button" className="">
+                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+                                                <path d="M2.25 12C2.25 10.4812 3.48122 9.25 5 9.25C6.51878 9.25 7.75 10.4812 7.75 12C7.75 13.5188 6.51878 14.75 5 14.75C3.48122 14.75 2.25 13.5188 2.25 12ZM5 10.75C4.30964 10.75 3.75 11.3096 3.75 12C3.75 12.6904 4.30964 13.25 5 13.25C5.69036 13.25 6.25 12.6904 6.25 12C6.25 11.3096 5.69036 10.75 5 10.75Z" fill="#1C274C" />
+                                                <path d="M9.25 12C9.25 10.4812 10.4812 9.25 12 9.25C13.5188 9.25 14.75 10.4812 14.75 12C14.75 13.5188 13.5188 14.75 12 14.75C10.4812 14.75 9.25 13.5188 9.25 12ZM12 10.75C11.3096 10.75 10.75 11.3096 10.75 12C10.75 12.6904 11.3096 13.25 12 13.25C12.6904 13.25 13.25 12.6904 13.25 12C13.25 11.3096 12.6904 10.75 12 10.75Z" fill="#1C274C" />
+                                                <path d="M19 9.25C17.4812 9.25 16.25 10.4812 16.25 12C16.25 13.5188 17.4812 14.75 19 14.75C20.5188 14.75 21.75 13.5188 21.75 12C21.75 10.4812 20.5188 9.25 19 9.25ZM17.75 12C17.75 11.3096 18.3096 10.75 19 10.75C19.6904 10.75 20.25 11.3096 20.25 12C20.25 12.6904 19.6904 13.25 19 13.25C18.3096 13.25 17.75 12.6904 17.75 12Z" fill="#1C274C" />
+                                            </svg>
+                                        </div>
+
+                                       <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                            <li>
+                                                <Link to={`/updatePost/${post._id}`}>Edit</Link>
+                                            </li>
+                                            <li>
+                                                <button onClick={() => handleDelete(post._id)}>Delete</button>
+                                            </li>
+                                        </ul> 
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> */}
+                {/* )
+                } */}
+
+
             </div>
         </div>
     );
