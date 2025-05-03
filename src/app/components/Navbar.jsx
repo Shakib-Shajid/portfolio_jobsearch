@@ -17,7 +17,7 @@ const Navbar = () => {
                             <li><Link href="/jobs">Jobs</Link></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl -ml-5 lg:ml-0">Portfolio & Job</a>
+                    <Link href="/" className="btn btn-ghost text-xl -ml-5 lg:ml-0">Portfolio & Job</Link>
                 </div>
 
                 <div className="navbar-center hidden lg:flex gap-5">
