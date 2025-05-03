@@ -23,36 +23,43 @@ const page = () => {
 
     const experiences = [
         {
-            "company": "Microsoft",
-            "designation": "Software Engineer",
-            "duration": "Jan 2020 – Dec 2022",
-            "responsibilities": [
-                "Developed scalable web applications using .NET and Azure services.",
-                "Collaborated with cross-functional teams to implement new features.",
-                "Optimized application performance and reduced load times by 30%."
-            ]
+          company: "Microsoft",
+          designation: "Software Engineer",
+          duration: "Jan 2020 – Dec 2022",
+          responsibilities: [
+            "Developed scalable web applications using .NET and Azure services.",
+            "Collaborated with cross-functional teams to implement new features.",
+            "Optimized application performance and reduced load times by 30%.",
+            "Implemented CI/CD pipelines using Azure DevOps to streamline deployments.",
+            "Led code reviews and mentored junior developers to uphold code quality standards."
+          ]
         },
         {
-            "company": "Google",
-            "designation": "Frontend Developer",
-            "duration": "Feb 2018 – Dec 2019",
-            "responsibilities": [
-                "Designed and developed responsive user interfaces with React.js.",
-                "Worked closely with UX designers to improve user experience.",
-                "Maintained component libraries and enforced UI consistency across products."
-            ]
+          company: "Google",
+          designation: "Frontend Developer",
+          duration: "Feb 2018 – Dec 2019",
+          responsibilities: [
+            "Designed and developed responsive user interfaces with React.js.",
+            "Worked closely with UX designers to improve user experience.",
+            "Maintained component libraries and enforced UI consistency across products.",
+            "Optimized web performance, improving load times by 25%.",
+            "Integrated REST APIs and ensured smooth data flow using Redux."
+          ]
         },
         {
-            "company": "Amazon",
-            "designation": "Backend Developer",
-            "duration": "Mar 2016 – Jan 2018",
-            "responsibilities": [
-                "Built and maintained microservices using Node.js and AWS Lambda.",
-                "Integrated third-party APIs and improved data handling efficiency.",
-                "Ensured system reliability and uptime through robust testing and monitoring."
-            ]
+          company: "Amazon",
+          designation: "Backend Developer",
+          duration: "Mar 2016 – Jan 2018",
+          responsibilities: [
+            "Built and maintained microservices using Node.js and AWS Lambda.",
+            "Integrated third-party APIs and improved data handling efficiency.",
+            "Ensured system reliability and uptime through robust testing and monitoring.",
+            "Designed scalable database schemas using MongoDB and PostgreSQL.",
+            "Automated deployment processes with Docker and Jenkins."
+          ]
         }
-    ]
+      ];
+      
 
 
 
@@ -60,7 +67,7 @@ const page = () => {
         <div>
 
             <div className='flex gap-5 flex-col md:flex-row mt-5 justify-center w-[80%] mx-auto md:w-[90%] lg:w-full'>
-                <img src="https://rb.gy/c28gf3" className="max-w-sm w-80 lg:w-full rounded-lg shadow-2xl" alt="" />
+                <img src="https://rb.gy/c28gf3" className="max-w-sm w-80 lg:w-full shadow-2xl border-blue-700 rounded-full border-4" alt="" />
                 <div className="bg-white overflow-hidden shadow rounded-lg border md:w-full lg:w-1/3">
                     <div className="px-4 py-5 sm:px-4">
                         <h3 className="text-lg leading-6 font-medium text-gray-900">
@@ -113,9 +120,9 @@ const page = () => {
                                     Social Links
                                 </dt>
                                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                    <Link href="https://www.linkedin.com/" className="mr-6 border-b-2 border-black hover:font-bold">LinkedIn</Link >
-                                    <Link href="https://github.com/" className="mr-6 border-b-2 border-black hover:font-bold">GitHub</Link >
-                                    <Link href="https://www.google.com/" className=' border-b-2 border-black hover:font-bold'>Portfolio</Link >
+                                    <Link href="https://www.linkedin.com/" className="mr-6 border-b-2 border-black hover:font-bold hover:text-blue-600" target="_blank">LinkedIn</Link >
+                                    <Link href="https://github.com/" className="mr-6 border-b-2 border-black hover:font-bold hover:text-blue-600" target="_blank">GitHub</Link >
+                                    <Link href="https://www.google.com/" className=' border-b-2 border-black hover:font-bold hover:text-blue-600' target="_blank">Portfolio</Link >
                                 </dd>
 
                             </div>
