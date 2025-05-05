@@ -76,7 +76,7 @@ const page = () => {
 
                 {/* Apply Button */}
                 <div className="justify-end card-actions mt-2">
-                  <button className="btn btn-info text-white w-full mx-auto">
+                  <button className={`btn text-white w-full mx-auto ${percentage < 50 ? "bg-red-600" : "btn-info"} `}>
                     Apply
                   </button>
                 </div>

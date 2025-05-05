@@ -85,10 +85,56 @@ const page = () => {
             </p>
 
 
+            <div className='w-3/4 md:w-3/4 lg:w-2/3 mx-auto'>
+                <h3 className='text-5xl font-bold text-blue-600 text-center my-3'>About Myself</h3>
+
+
+                <div className="card bg-base-100 w-full shadow-xl my-5 border-l-4 border-b-4 border-pink-500">
+                    <div className="card-body mb-5">
+                        <p className='text-xs md:text-2xl font-bold text-pink-600'>Full Stack Web Develoepr </p>
+
+                        <p className='text-lg text-[#4B5563] text-justify'>I am a results-driven Senior Full-Stack Developer with over 7 years of experience designing, developing, and deploying scalable web applications across a variety of industries. My expertise spans both frontend and backend technologies, including JavaScript (React, Next.js), TypeScript, Node.js, Express, and database systems like MongoDB and PostgreSQL. <br /><br />
+
+                            I’m passionate about building clean, maintainable code and delivering high-performance, user-focused solutions. I’ve led cross-functional teams, architected large systems from scratch, and collaborated closely with stakeholders to transform business requirements into robust digital products. <br /><br />
+
+                            On the frontend, I specialize in crafting intuitive user interfaces with Tailwind CSS, Next.js App Router, and modern design systems. On the backend, I ensure security, scalability, and performance through RESTful APIs, JWT authentication, microservices, and cloud deployment (e.g., AWS, Vercel, or Docker-based infrastructure). <br /><br />
+
+                            I'm a continuous learner, open-source contributor, and mentor who enjoys solving complex problems and optimizing workflows. My goal is to build impactful software that drives business growth and delivers a seamless user experience.</p>
+
+
+
+
+                        {/* <div className="dropdown dropdown-bottom dropdown-end absolute top-0 right-0 mx-2">
+                                    <div tabIndex={0} role="button" className="">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+                                            <path d="M2.25 12C2.25 10.4812 3.48122 9.25 5 9.25C6.51878 9.25 7.75 10.4812 7.75 12C7.75 13.5188 6.51878 14.75 5 14.75C3.48122 14.75 2.25 13.5188 2.25 12ZM5 10.75C4.30964 10.75 3.75 11.3096 3.75 12C3.75 12.6904 4.30964 13.25 5 13.25C5.69036 13.25 6.25 12.6904 6.25 12C6.25 11.3096 5.69036 10.75 5 10.75Z" fill="#1C274C" />
+                                            <path d="M9.25 12C9.25 10.4812 10.4812 9.25 12 9.25C13.5188 9.25 14.75 10.4812 14.75 12C14.75 13.5188 13.5188 14.75 12 14.75C10.4812 14.75 9.25 13.5188 9.25 12ZM12 10.75C11.3096 10.75 10.75 11.3096 10.75 12C10.75 12.6904 11.3096 13.25 12 13.25C12.6904 13.25 13.25 12.6904 13.25 12C13.25 11.3096 12.6904 10.75 12 10.75Z" fill="#1C274C" />
+                                            <path d="M19 9.25C17.4812 9.25 16.25 10.4812 16.25 12C16.25 13.5188 17.4812 14.75 19 14.75C20.5188 14.75 21.75 13.5188 21.75 12C21.75 10.4812 20.5188 9.25 19 9.25ZM17.75 12C17.75 11.3096 18.3096 10.75 19 10.75C19.6904 10.75 20.25 11.3096 20.25 12C20.25 12.6904 19.6904 13.25 19 13.25C18.3096 13.25 17.75 12.6904 17.75 12Z" fill="#1C274C" />
+                                        </svg>
+                                    </div>
+
+                                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                            <li>
+                                                <Link to={`/updatePost/${experience.id}`}>Edit</Link>
+                                            </li>
+                                            <li>
+                                                <button onClick={() => handleDelete(experience.id)}>Delete</button>
+                                            </li>
+                                        </ul>
+
+                                </div> */}
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
 
 
             <div className='w-3/4 md:w-3/4 lg:w-2/3 mx-auto'>
-                <h3 className='text-5xl font-bold text-violet-600 text-center my-3'>Experience</h3>
+                <h3 className='text-5xl font-bold text-violet-600 text-center my-5'>Experience</h3>
 
                 {
                     experiences.map((experience, index) =>
