@@ -1,64 +1,66 @@
 [
     {
-        "name": "SmartSchool - School Management System",
-        "technologies": [
-            "Next.js 13 (App Router)",
-            "Tailwind CSS",
-            "DaisyUI",
-            "Express.js",
-            "MongoDB",
-            "JWT"
-        ],
-        "github": "https://github.com/yourusername/smartschool",
-        "live": "https://smartschool.vercel.app",
-        "features": [
-            "Multi-role login system (Superadmin, Admin, Teacher, Accountant)",
-            "Login/Register with JWT Authentication",
-            "Fee and Salary Management System",
-            "Result Management for Students",
-            "Secure API Integration with Express Backend",
-            "Firebase for login OTP (optional)"
-        ]
+      "name": "JobSphere - AI-Powered Job Matching Platform",
+      "technologies": [
+        "Next.js",
+        "Tailwind CSS",
+        "DaisyUI",
+        "Express.js",
+        "MongoDB",
+        "JWT"
+      ],
+      "github": "https://github.com/",
+      "live": "https://vercel.com/",
+      "features": [
+        "Smart job filtering by category, skill, and keyword",
+        "User skill matching with percentage indicator",
+        "JWT-based secure login & role-based dashboard",
+        "Admin panel to manage job listings",
+        "Dynamic job data using JSON or API",
+        "Search integrated in navbar with live updates"
+      ]
     },
     {
-        "name": "CoinPredictor - Crypto Price Prediction Tool",
-        "technologies": [
-            "Next.js 13",
-            "Tailwind CSS",
-            "Chart.js",
-            "Binance API",
-            "Python (Flask API)",
-            "JWT"
-        ],
-        "github": "https://github.com/yourusername/coinpredictor",
-        "live": "https://coinpredictor.vercel.app",
-        "features": [
-            "Search for any coin and get real-time predictions",
-            "Indicators used: RSI, MACD, Moving Averages, Support/Resistance",
-            "Multiple timeframes supported (1m to 2h)",
-            "JWT-based secure login",
-            "Telegram alerts integration (coming soon)",
-            "Python backend for machine learning model"
-        ]
+      "name": "SkillSync - Personalized Learning Tracker",
+      "technologies": [
+        "Next.js",
+        "Tailwind CSS",
+        "Chart.js",
+        "Express.js",
+        "MongoDB",
+        "JWT"
+      ],
+      "github": "https://github.com/",
+      "live": "https://vercel.com/",
+      "features": [
+        "Track progress in learning new skills",
+        "Login/Register with secure JWT authentication",
+        "Admin and Student dashboards with analytics",
+        "Skill tags with progress rings (Chart.js)",
+        "Data saved and retrieved securely with MongoDB",
+        "Learning suggestions based on past progress"
+      ]
     },
     {
-        "name": "AuthDash - Custom Role Based Frontend Dashboard for WordPress",
-        "technologies": [
-            "React.js",
-            "Tailwind CSS",
-            "WordPress REST API",
-            "JWT",
-            "PHP",
-            "MySQL"
-        ],
-        "github": "https://github.com/yourusername/authdash",
-        "live": "https://authdash-demo.vercel.app",
-        "features": [
-            "Drag & drop dashboard builder for WordPress roles (Author, Student, Subscriber)",
-            "Login/Register with JWT Auth connected to WordPress backend",
-            "Secure role-based access to different sections",
-            "Dynamic widget rendering from WordPress API",
-            "Built as a WordPress plugin with frontend in React"
-        ]
+      "name": "Invoicify - Modern Invoice Management System",
+      "technologies": [
+        "Next.js",
+        "Tailwind CSS",
+        "DaisyUI",
+        "Express.js",
+        "MongoDB",
+        "JWT"
+      ],
+      "github": "https://github.com/",
+      "live": "https://vercel.com/",
+      "features": [
+        "Create, edit, and manage invoices",
+        "Role-based access: Admin, Accountant, Client",
+        "Email invoice with PDF download option",
+        "Secure JWT login and dashboard access",
+        "Status tracking: Paid, Pending, Overdue",
+        "Search and filter invoices by client or date"
+      ]
     }
-]
+  ]
+  
