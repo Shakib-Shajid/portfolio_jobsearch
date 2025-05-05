@@ -1,198 +1,311 @@
 [
     {
-        "id": 1,
-        "name": "SkyBridge Technologies",
-        "position": "Junior Engineer",
-        "skills": [
-            "Next.js",
-            "React",
-            "PHP",
-            "TypeScript",
-            "Tailwind",
-            "Redux"
-        ],
-        "requirements": [
-            "Bachelor's degree in Computer Science",
-            "0-1 year of experience",
-            "Strong understanding of JavaScript and React",
-            "Good communication skills",
-            "Eagerness to learn new technologies"
-        ]
+      "id": 1,
+      "name": "SkyBridge Technologies",
+      "position": "Junior Engineer",
+      "category": "Web Development",
+      "skills": ["Next.js", "React", "PHP", "TypeScript", "Tailwind", "Redux"],
+      "requirements": [
+        "Bachelor's degree in Computer Science",
+        "0-1 year of experience",
+        "Strong understanding of JavaScript and React",
+        "Good communication skills",
+        "Eagerness to learn new technologies"
+      ]
     },
     {
-        "id": 2,
-        "name": "QuantumPixel Labs",
-        "position": "Frontend Developer",
-        "skills": [
-            "React",
-            "Tailwind",
-            "JavaScript",
-            "Redux",
-            "HTML",
-            "CSS"
-        ],
-        "requirements": [
-            "2+ years of frontend experience",
-            "Portfolio of responsive web designs",
-            "Strong knowledge of React and Redux",
-            "Understanding of browser compatibility issues",
-            "Ability to work in a team environment"
-        ]
+      "id": 2,
+      "name": "QuantumPixel Labs",
+      "position": "Frontend Developer",
+      "category": "Web Development",
+      "skills": ["React", "Tailwind", "JavaScript", "Redux", "HTML", "CSS"],
+      "requirements": [
+        "2+ years of frontend experience",
+        "Portfolio of responsive web designs",
+        "Strong knowledge of React and Redux",
+        "Understanding of browser compatibility issues",
+        "Ability to work in a team environment"
+      ]
     },
     {
-        "id": 3,
-        "name": "CoreStack Solutions",
-        "position": "Backend Developer",
-        "skills": [
-            "Node.js",
-            "Express",
-            "MongoDB",
-            "PHP",
-            "TypeScript"
-        ],
-        "requirements": [
-            "Experience in RESTful APIs",
-            "Database schema design knowledge",
-            "Good understanding of server-side frameworks",
-            "Experience with version control (Git)",
-            "Problem-solving and debugging skills"
-        ]
+      "id": 3,
+      "name": "CoreStack Solutions",
+      "position": "Backend Developer",
+      "category": "Software Development",
+      "skills": ["Node.js", "Express", "MongoDB", "PHP", "TypeScript"],
+      "requirements": [
+        "Experience in RESTful APIs",
+        "Database schema design knowledge",
+        "Good understanding of server-side frameworks",
+        "Experience with version control (Git)",
+        "Problem-solving and debugging skills"
+      ]
     },
     {
-        "id": 4,
-        "name": "NextVerse Tech",
-        "position": "Full Stack Developer",
-        "skills": [
-            "Next.js",
-            "React",
-            "Node.js",
-            "Express",
-            "MySQL",
-            "Tailwind"
-        ],
-        "requirements": [
-            "3+ years as full stack developer",
-            "Knowledge of modern JS frameworks",
-            "Hands-on experience in both frontend and backend",
-            "Experience with RESTful APIs and JSON",
-            "Ability to manage databases efficiently"
-        ]
+      "id": 4,
+      "name": "NextVerse Tech",
+      "position": "Full Stack Developer",
+      "category": "Software Development",
+      "skills": ["Next.js", "React", "Node.js", "Express", "MySQL", "Tailwind"],
+      "requirements": [
+        "3+ years as full stack developer",
+        "Knowledge of modern JS frameworks",
+        "Hands-on experience in both frontend and backend",
+        "Experience with RESTful APIs and JSON",
+        "Ability to manage databases efficiently"
+      ]
     },
     {
-        "id": 5,
-        "name": "PixelLoop Studio",
-        "position": "UI/UX Engineer",
-        "skills": [
-            "Figma",
-            "Tailwind",
-            "JavaScript",
-            "React",
-            "HTML",
-            "CSS"
-        ],
-        "requirements": [
-            "Design portfolio required",
-            "Experience with Figma or Adobe XD",
-            "Good sense of modern UI principles",
-            "Knowledge of accessibility standards",
-            "Collaborative design experience"
-        ]
+      "id": 5,
+      "name": "PixelLoop Studio",
+      "position": "UI/UX Engineer",
+      "category": "UI/UX Design",
+      "skills": ["Figma", "Tailwind", "JavaScript", "React", "HTML", "CSS"],
+      "requirements": [
+        "Design portfolio required",
+        "Experience with Figma or Adobe XD",
+        "Good sense of modern UI principles",
+        "Knowledge of accessibility standards",
+        "Collaborative design experience"
+      ]
     },
     {
-        "id": 6,
-        "name": "CloudMorph Labs",
-        "position": "DevOps Engineer",
-        "skills": [
-            "AWS",
-            "Docker",
-            "Jenkins",
-            "Linux",
-            "Node.js",
-            "Bash"
-        ],
-        "requirements": [
-            "Familiar with CI/CD pipelines",
-            "AWS certification is a plus",
-            "Experience in production deployments",
-            "Strong scripting skills in Bash or Python",
-            "Knowledge of monitoring tools like Prometheus"
-        ]
+      "id": 6,
+      "name": "CloudMorph Labs",
+      "position": "DevOps Engineer",
+      "category": "DevOps",
+      "skills": ["AWS", "Docker", "Jenkins", "Linux", "Node.js", "Bash"],
+      "requirements": [
+        "Familiar with CI/CD pipelines",
+        "AWS certification is a plus",
+        "Experience in production deployments",
+        "Strong scripting skills in Bash or Python",
+        "Knowledge of monitoring tools like Prometheus"
+      ]
     },
     {
-        "id": 7,
-        "name": "AppNinja Creations",
-        "position": "Mobile App Developer",
-        "skills": [
-            "React Native",
-            "TypeScript",
-            "Redux",
-            "Expo",
-            "Firebase"
-        ],
-        "requirements": [
-            "Experience in cross-platform development",
-            "Published at least one app",
-            "Strong understanding of mobile architecture",
-            "Familiarity with Google Play and App Store",
-            "Ability to write clean and reusable code"
-        ]
+      "id": 7,
+      "name": "AppNinja Creations",
+      "position": "Mobile App Developer",
+      "category": "Mobile App Development",
+      "skills": ["React Native", "TypeScript", "Redux", "Expo", "Firebase"],
+      "requirements": [
+        "Experience in cross-platform development",
+        "Published at least one app",
+        "Strong understanding of mobile architecture",
+        "Familiarity with Google Play and App Store",
+        "Ability to write clean and reusable code"
+      ]
     },
     {
-        "id": 8,
-        "name": "TestHive Systems",
-        "position": "Software Tester",
-        "skills": [
-            "Selenium",
-            "Cypress",
-            "Jest",
-            "Mocha",
-            "JavaScript"
-        ],
-        "requirements": [
-            "Understanding of testing frameworks",
-            "Automation experience preferred",
-            "Attention to detail",
-            "Basic knowledge of development workflows",
-            "Ability to write and execute test cases"
-        ]
+      "id": 8,
+      "name": "TestHive Systems",
+      "position": "Software Tester",
+      "category": "QA & Testing",
+      "skills": ["Selenium", "Cypress", "Jest", "Mocha", "JavaScript"],
+      "requirements": [
+        "Understanding of testing frameworks",
+        "Automation experience preferred",
+        "Attention to detail",
+        "Basic knowledge of development workflows",
+        "Ability to write and execute test cases"
+      ]
     },
     {
-        "id": 9,
-        "name": "DataNest Analytics",
-        "position": "Data Engineer",
-        "skills": [
-            "Python",
-            "SQL",
-            "Airflow",
-            "AWS",
-            "ETL",
-            "MongoDB"
-        ],
-        "requirements": [
-            "Experience with data pipelines",
-            "Understanding of ETL workflows",
-            "Working with big data tools is a plus",
-            "Strong knowledge of data warehousing",
-            "Proficiency in SQL and Python"
-        ]
+      "id": 9,
+      "name": "DataNest Analytics",
+      "position": "Data Engineer",
+      "category": "Data Science",
+      "skills": ["Python", "SQL", "Airflow", "AWS", "ETL", "MongoDB"],
+      "requirements": [
+        "Experience with data pipelines",
+        "Understanding of ETL workflows",
+        "Working with big data tools is a plus",
+        "Strong knowledge of data warehousing",
+        "Proficiency in SQL and Python"
+      ]
     },
     {
-        "id": 10,
-        "name": "CloudForge Networks",
-        "position": "Cloud Engineer",
-        "skills": [
-            "AWS",
-            "Azure",
-            "Terraform",
-            "Docker",
-            "Kubernetes"            
-        ],
+      "id": 10,
+      "name": "CloudForge Networks",
+      "position": "Cloud Engineer",
+      "category": "Cloud Computing",
+      "skills": ["AWS", "Azure", "Terraform", "Docker", "Kubernetes"],
+      "requirements": [
+        "Cloud platform certification preferred",
+        "Experience with infrastructure as code",
+        "Understanding of networking & security",
+        "Familiarity with Kubernetes architecture",
+        "Experience in hybrid cloud environments"
+      ]
+    },
+    {
+        "id": 11,
+        "name": "SecureNet Corp",
+        "position": "Cybersecurity Analyst",
+        "category": "Cybersecurity",
+        "skills": ["Firewalls", "IDS/IPS", "Python", "SIEM", "Risk Assessment"],
         "requirements": [
-            "Cloud platform certification preferred",
-            "Experience with infrastructure as code",
-            "Understanding of networking & security",
-            "Familiarity with Kubernetes architecture",
-            "Experience in hybrid cloud environments"
+          "Experience with threat detection",
+          "Familiarity with SIEM tools",
+          "Understanding of network security",
+          "Strong analytical skills",
+          "Security certifications preferred"
         ]
-    }
-]
+      },
+      {
+        "id": 12,
+        "name": "AI Nova Systems",
+        "position": "AI Engineer",
+        "category": "Artificial Intelligence",
+        "skills": ["Python", "TensorFlow", "PyTorch", "Deep Learning", "NLP"],
+        "requirements": [
+          "Experience with AI models",
+          "Strong Python and ML framework knowledge",
+          "Background in neural networks",
+          "Ability to analyze and preprocess data",
+          "AI/ML publications a plus"
+        ]
+      },
+      {
+        "id": 13,
+        "name": "BlockCrafters",
+        "position": "Blockchain Developer",
+        "category": "Blockchain Technology",
+        "skills": ["Solidity", "Ethereum", "Web3.js", "Smart Contracts", "Truffle"],
+        "requirements": [
+          "Understanding of blockchain architecture",
+          "Smart contract development experience",
+          "Experience with Ethereum network",
+          "Security-first mindset",
+          "Git proficiency"
+        ]
+      },
+      {
+        "id": 14,
+        "name": "ML Pathway Labs",
+        "position": "Machine Learning Engineer",
+        "category": "Machine Learning",
+        "skills": ["Scikit-learn", "Python", "Pandas", "XGBoost", "MLFlow"],
+        "requirements": [
+          "Experience in ML algorithms",
+          "Good statistical and data science background",
+          "Model evaluation and tuning experience",
+          "Familiarity with data pipelines",
+          "Versioning with MLFlow or similar"
+        ]
+      },
+      {
+        "id": 15,
+        "name": "NetWise Solutions",
+        "position": "Network Administrator",
+        "category": "Network Administration",
+        "skills": ["Cisco", "VPN", "Firewall", "Wireshark", "Linux"],
+        "requirements": [
+          "Knowledge of LAN/WAN",
+          "Firewall configuration skills",
+          "VPN setup experience",
+          "Network troubleshooting skills",
+          "Certifications like CCNA preferred"
+        ]
+      },
+      {
+        "id": 16,
+        "name": "DBMatrix Corp",
+        "position": "Database Administrator",
+        "category": "Database Management",
+        "skills": ["MySQL", "PostgreSQL", "MongoDB", "Backup/Recovery", "SQL"],
+        "requirements": [
+          "Database performance tuning experience",
+          "Knowledge of RDBMS and NoSQL",
+          "Backup and recovery experience",
+          "Strong SQL query skills",
+          "Experience in migration projects"
+        ]
+      },
+      {
+        "id": 17,
+        "name": "ByteLogic Gaming",
+        "position": "Game Developer",
+        "category": "Game Development",
+        "skills": ["Unity", "C#", "Blender", "Photon", "Game Physics"],
+        "requirements": [
+          "Experience in game mechanics",
+          "Published game projects",
+          "Knowledge of multiplayer game systems",
+          "Understanding of 3D rendering",
+          "Passion for gaming"
+        ]
+      },
+      {
+        "id": 18,
+        "name": "ChipCore Innovations",
+        "position": "Embedded Systems Engineer",
+        "category": "Embedded Systems",
+        "skills": ["C", "C++", "RTOS", "Microcontrollers", "IoT"],
+        "requirements": [
+          "Experience with embedded C/C++",
+          "Knowledge of ARM Cortex or AVR",
+          "RTOS and low-level driver experience",
+          "Debugging hardware interfaces",
+          "IoT device experience"
+        ]
+      },
+      {
+        "id": 19,
+        "name": "InsightGrid Solutions",
+        "position": "BI Developer",
+        "category": "Business Intelligence",
+        "skills": ["Power BI", "Tableau", "SQL", "Data Modeling", "ETL"],
+        "requirements": [
+          "Experience with BI reporting tools",
+          "Strong analytical mindset",
+          "Ability to build dashboards",
+          "Experience in data transformation",
+          "Data storytelling skills"
+        ]
+      },
+      {
+        "id": 20,
+        "name": "TechWise Consultants",
+        "position": "IT Consultant",
+        "category": "IT Consultancy",
+        "skills": ["Strategy", "ITIL", "Cloud", "Networking", "Project Management"],
+        "requirements": [
+          "Experience advising clients",
+          "IT infrastructure understanding",
+          "Good communication and planning skills",
+          "Ability to present technical solutions",
+          "Experience in consulting projects"
+        ]
+      },
+      {
+        "id": 21,
+        "name": "SysOps Global",
+        "position": "System Administrator",
+        "category": "System Administration",
+        "skills": ["Linux", "Windows Server", "Shell Scripting", "VMWare", "Active Directory"],
+        "requirements": [
+          "System monitoring and maintenance experience",
+          "Server setup and backup knowledge",
+          "Proficient in bash/powershell scripting",
+          "Patch management skills",
+          "Experience in uptime optimization"
+        ]
+      },
+      {
+        "id": 22,
+        "name": "TechAssist Inc.",
+        "position": "IT Support Specialist",
+        "category": "IT Support",
+        "skills": ["Windows", "Help Desk", "Ticketing Systems", "Troubleshooting", "Remote Support"],
+        "requirements": [
+          "Experience in Level 1/2 support",
+          "Familiarity with common ticketing tools",
+          "Problem-solving mindset",
+          "Customer service experience",
+          "Basic networking knowledge"
+        ]
+      }
+  ]
+  

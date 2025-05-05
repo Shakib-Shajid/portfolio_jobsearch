@@ -38,7 +38,8 @@ const Category = () => {
                                     <h3 className="card-title text-base">{category}</h3>
                                 </div>
                                 <div className="card-actions justify-end mt-4">
-                                    <Link href="/jobs" className="btn btn-sm btn-outline btn-primary">Explore Here</Link>
+                                    <Link href={`/jobs?category=${encodeURIComponent(category)}`} className="btn btn-sm btn-outline btn-primary">Explore Here</Link>
+
                                 </div>
                             </div>
                         </div>

@@ -90,12 +90,12 @@ const page = () => {
 
 
                 <div className="card bg-base-100 w-full shadow-xl my-5 border-l-4 border-b-4 border-pink-500">
-                    <div className="card-body mb-5">
+                    <div className="card-body">
                         <p className='text-xs md:text-2xl font-bold text-pink-600'>Full Stack Web Develoepr </p>
 
                         <p className='text-lg text-[#4B5563] text-justify'>I am a results-driven Senior Full-Stack Developer with over 7 years of experience designing, developing, and deploying scalable web applications across a variety of industries. My expertise spans both frontend and backend technologies, including JavaScript (React, Next.js), TypeScript, Node.js, Express, and database systems like MongoDB and PostgreSQL. <br /><br />
 
-                            I’m passionate about building clean, maintainable code and delivering high-performance, user-focused solutions. I’ve led cross-functional teams, architected large systems from scratch, and collaborated closely with stakeholders to transform business requirements into robust digital products. <br /><br />
+                            I&apos;m passionate about building clean, maintainable code and delivering high-performance, user-focused solutions. I&apos;ve led cross-functional teams, architected large systems from scratch, and collaborated closely with stakeholders to transform business requirements into robust digital products. <br /><br />
 
                             On the frontend, I specialize in crafting intuitive user interfaces with Tailwind CSS, Next.js App Router, and modern design systems. On the backend, I ensure security, scalability, and performance through RESTful APIs, JWT authentication, microservices, and cloud deployment (e.g., AWS, Vercel, or Docker-based infrastructure). <br /><br />
 
@@ -134,7 +134,7 @@ const page = () => {
 
 
             <div className='w-3/4 md:w-3/4 lg:w-2/3 mx-auto'>
-                <h3 className='text-5xl font-bold text-violet-600 text-center my-5'>Experience</h3>
+                <h3 className='text-5xl font-bold text-violet-600 text-center my-10'>Experience</h3>
 
                 {
                     experiences.map((experience, index) =>
