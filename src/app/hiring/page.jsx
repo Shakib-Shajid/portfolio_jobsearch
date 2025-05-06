@@ -32,8 +32,8 @@ const Page = () => {
     };
 
     return (
-        <div className='flex w-96 md:w-full mx-auto'>
-            <div className='flex flex-col gap-5 mx-auto border-info rounded-2xl border-2 pt-10 md:p-20'>
+        <div className='flex w-full'>
+            <div className='flex flex-col gap-5 mx-auto border-info rounded-2xl border-2 pt-10 md:p-20 w-96 md:w-[80%] lg:w-[50%]'>
                 <h3 className='text-3xl font-bold text-center text-info'>Hiring Form</h3>
 
                 <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Company Name' />
