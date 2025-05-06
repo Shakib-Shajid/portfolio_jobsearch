@@ -8,9 +8,15 @@ const Navbar = () => {
     const [search, setSearch] = useState("");
     const router = useRouter();
 
-    const handleKeyDown = (e) => {
-        if (e.key === 'Enter' && search.trim()) {
+    const handleSearch = () => {
+        if (search.trim()) {
             router.push(`/jobs?search=${encodeURIComponent(search.trim())}`);
+        }
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
         }
     };
 
@@ -37,15 +43,23 @@ const Navbar = () => {
                     <Link href="/jobs">Jobs</Link>
                 </div>
 
-                <div className="flex gap-2 navbar-end">
+                <div className="flex gap-2 navbar-end relative">
                     <input
                         type="text"
                         placeholder="Search Job Here"
-                        className="input input-bordered w-24 md:w-auto"
+                        className="input input-bordered w-36 md:w-auto rounded-full text-xs md:text-sm"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                         onKeyDown={handleKeyDown}
                     />
+                    <button
+                        className="absolute z-10 right-14 text-xs btn btn-xs btn-success rounded-full shadow-none"
+                        onClick={handleSearch}
+                    >
+                        Search
+                    </button>
+
+
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">

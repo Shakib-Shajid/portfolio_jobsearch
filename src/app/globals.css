@@ -28,3 +28,16 @@ body {
 .radial-progress.no-dot::after {
   display: none !important;
 }
+
+:root {
+  color-scheme: light;
+  background-color: white;
+  color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: white !important;
+    color: black !important;
+  }
+}
