@@ -86,14 +86,14 @@ const page = () => {
 
 
             <div className='w-3/4 md:w-3/4 lg:w-2/3 mx-auto'>
-                <h3 className='text-5xl font-bold text-blue-600 text-center my-3'>About Myself</h3>
+                <h3 className='text-3xl md:text-5xl font-bold text-blue-600 text-center my-3'>About Myself</h3>
 
 
                 <div className="card bg-base-100 w-full shadow-xl my-5 border-l-4 border-b-4 border-pink-500">
                     <div className="card-body">
-                        <p className='text-xs md:text-2xl font-bold text-pink-600'>Full Stack Web Develoepr </p>
+                        <p className='text-xl md:text-2xl font-bold text-pink-600'>Full Stack Web Develoepr </p>
 
-                        <p className='text-lg text-[#4B5563] text-justify'>I am a results-driven Senior Full-Stack Developer with over 7 years of experience designing, developing, and deploying scalable web applications across a variety of industries. My expertise spans both frontend and backend technologies, including JavaScript (React, Next.js), TypeScript, Node.js, Express, and database systems like MongoDB and PostgreSQL. <br /><br />
+                        <p className='text-lg text-[#4B5563] md:text-justify'>I am a results-driven Senior Full-Stack Developer with over 7 years of experience designing, developing, and deploying scalable web applications across a variety of industries. My expertise spans both frontend and backend technologies, including JavaScript (React, Next.js), TypeScript, Node.js, Express, and database systems like MongoDB and PostgreSQL. <br /><br />
 
                             I&apos;m passionate about building clean, maintainable code and delivering high-performance, user-focused solutions. I&apos;ve led cross-functional teams, architected large systems from scratch, and collaborated closely with stakeholders to transform business requirements into robust digital products. <br /><br />
 
@@ -134,14 +134,14 @@ const page = () => {
 
 
             <div className='w-3/4 md:w-3/4 lg:w-2/3 mx-auto'>
-                <h3 className='text-5xl font-bold text-violet-600 text-center my-10'>Experience</h3>
+                <h3 className='text-3xl md:text-5xl font-bold text-violet-600 text-center my-10'>Experience</h3>
 
                 {
                     experiences.map((experience, index) =>
                         <div className="card bg-base-100 w-full shadow-xl my-5 border-l-4 border-b-4 border-indigo-500" key={index}>
                             <div className="card-body ">
                                 <div className='flex flex-col md:flex-row items-baseline'>
-                                    <p className='text-xs md:text-2xl font-bold text-violet-600'>{experience.designation} </p>
+                                    <p className='text-xl md:text-2xl font-bold text-violet-600'>{experience.designation} </p>
                                     <p className='text-xs md:text-sm font-bold text-indigo-400 text-end'>{experience.duration}</p>
                                 </div>
                                 <p className='text-lg font-bold text-green-400'>{experience.company}</p>
@@ -186,14 +186,14 @@ const page = () => {
             </div>
 
             <div className='w-3/4 md:w-3/4 lg:w-2/3 mx-auto'>
-                <h3 className='text-5xl font-bold  text-center my-10 text-green-500'>Projects</h3>
+                <h3 className='text-3xl md:text-5xl font-bold  text-center my-10 text-green-500'>Projects</h3>
 
                 {
                     projects.map((project, index) =>
                         <div className="card bg-base-100 w-full shadow-2xl my-5 border-l-4 border-t-4 border-green-500" key={index}>
                             <div className="card-body ">
                                 <div className='flex flex-col md:flex-row items-baseline'>
-                                    <p className='text-xs md:text-2xl font-bold text-green-500 max-w-lg'>{project.name} </p>
+                                    <p className='text-lg md:text-xl font-bold text-green-500 max-w-lg'>{project.name} </p>
                                     <div className='flex gap-10 lg:ml-16'>
                                         <p className='text-xs md:text-sm text-indigo-400 border-b-2 font-extrabold'><Link href={project.github} target="_blank">GitHub Link</Link></p>
                                         <p className='text-xs md:text-sm text-indigo-400 border-b-2 font-extrabold'><Link href={project.live} target="_blank">Live Link</Link></p>
