@@ -3,6 +3,7 @@
       "id": 1,
       "name": "SkyBridge Technologies",
       "position": "Junior Engineer",
+      "website": "http://google.com",
       "category": "Web Development",
       "skills": ["Next.js", "React", "PHP", "TypeScript", "Tailwind", "Redux"],
       "requirements": [
@@ -17,6 +18,7 @@
       "id": 2,
       "name": "QuantumPixel Labs",
       "position": "Frontend Developer",
+      "website": "http://google.com",
       "category": "Web Development",
       "skills": ["React", "Tailwind", "JavaScript", "Redux", "HTML", "CSS"],
       "requirements": [
@@ -31,6 +33,7 @@
       "id": 3,
       "name": "CoreStack Solutions",
       "position": "Backend Developer",
+      "website": "http://google.com",
       "category": "Software Development",
       "skills": ["Node.js", "Express", "MongoDB", "PHP", "TypeScript"],
       "requirements": [
@@ -45,6 +48,7 @@
       "id": 4,
       "name": "NextVerse Tech",
       "position": "Full Stack Developer",
+      "website": "http://google.com",
       "category": "Software Development",
       "skills": ["Next.js", "React", "Node.js", "Express", "MySQL", "Tailwind"],
       "requirements": [
@@ -59,6 +63,7 @@
       "id": 5,
       "name": "PixelLoop Studio",
       "position": "UI/UX Engineer",
+      "website": "http://google.com",
       "category": "UI/UX Design",
       "skills": ["Figma", "Tailwind", "JavaScript", "React", "HTML", "CSS"],
       "requirements": [
@@ -73,6 +78,7 @@
       "id": 6,
       "name": "CloudMorph Labs",
       "position": "DevOps Engineer",
+      "website": "http://google.com",
       "category": "DevOps",
       "skills": ["AWS", "Docker", "Jenkins", "Linux", "Node.js", "Bash"],
       "requirements": [
@@ -87,6 +93,7 @@
       "id": 7,
       "name": "AppNinja Creations",
       "position": "Mobile App Developer",
+      "website": "http://google.com",
       "category": "Mobile App Development",
       "skills": ["React Native", "TypeScript", "Redux", "Expo", "Firebase"],
       "requirements": [
@@ -101,6 +108,7 @@
       "id": 8,
       "name": "TestHive Systems",
       "position": "Software Tester",
+      "website": "http://google.com",
       "category": "QA & Testing",
       "skills": ["Selenium", "Cypress", "Jest", "Mocha", "JavaScript"],
       "requirements": [
@@ -115,6 +123,7 @@
       "id": 9,
       "name": "DataNest Analytics",
       "position": "Data Engineer",
+      "website": "http://google.com",
       "category": "Data Science",
       "skills": ["Python", "SQL", "Airflow", "AWS", "ETL", "MongoDB"],
       "requirements": [
@@ -129,6 +138,7 @@
       "id": 10,
       "name": "CloudForge Networks",
       "position": "Cloud Engineer",
+      "website": "http://google.com",
       "category": "Cloud Computing",
       "skills": ["AWS", "Azure", "Terraform", "Docker", "Kubernetes"],
       "requirements": [
@@ -143,6 +153,7 @@
         "id": 11,
         "name": "SecureNet Corp",
         "position": "Cybersecurity Analyst",
+        "website": "http://google.com",
         "category": "Cybersecurity",
         "skills": ["Firewalls", "IDS/IPS", "Python", "SIEM", "Risk Assessment"],
         "requirements": [
@@ -157,6 +168,7 @@
         "id": 12,
         "name": "AI Nova Systems",
         "position": "AI Engineer",
+        "website": "http://google.com",
         "category": "Artificial Intelligence",
         "skills": ["Python", "TensorFlow", "PyTorch", "Deep Learning", "NLP"],
         "requirements": [
@@ -171,6 +183,7 @@
         "id": 13,
         "name": "BlockCrafters",
         "position": "Blockchain Developer",
+        "website": "http://google.com",
         "category": "Blockchain Technology",
         "skills": ["Solidity", "Ethereum", "Web3.js", "Smart Contracts", "Truffle"],
         "requirements": [
@@ -185,6 +198,7 @@
         "id": 14,
         "name": "ML Pathway Labs",
         "position": "Machine Learning Engineer",
+        "website": "http://google.com",
         "category": "Machine Learning",
         "skills": ["Scikit-learn", "Python", "Pandas", "XGBoost", "MLFlow"],
         "requirements": [
@@ -199,6 +213,7 @@
         "id": 15,
         "name": "NetWise Solutions",
         "position": "Network Administrator",
+        "website": "http://google.com",
         "category": "Network Administration",
         "skills": ["Cisco", "VPN", "Firewall", "Wireshark", "Linux"],
         "requirements": [
@@ -213,6 +228,7 @@
         "id": 16,
         "name": "DBMatrix Corp",
         "position": "Database Administrator",
+        "website": "http://google.com",
         "category": "Database Management",
         "skills": ["MySQL", "PostgreSQL", "MongoDB", "Backup/Recovery", "SQL"],
         "requirements": [
@@ -227,6 +243,7 @@
         "id": 17,
         "name": "ByteLogic Gaming",
         "position": "Game Developer",
+        "website": "http://google.com",
         "category": "Game Development",
         "skills": ["Unity", "C#", "Blender", "Photon", "Game Physics"],
         "requirements": [
@@ -241,6 +258,7 @@
         "id": 18,
         "name": "ChipCore Innovations",
         "position": "Embedded Systems Engineer",
+        "website": "http://google.com",
         "category": "Embedded Systems",
         "skills": ["C", "C++", "RTOS", "Microcontrollers", "IoT"],
         "requirements": [
@@ -255,6 +273,7 @@
         "id": 19,
         "name": "InsightGrid Solutions",
         "position": "BI Developer",
+        "website": "http://google.com",
         "category": "Business Intelligence",
         "skills": ["Power BI", "Tableau", "SQL", "Data Modeling", "ETL"],
         "requirements": [
@@ -269,6 +288,7 @@
         "id": 20,
         "name": "TechWise Consultants",
         "position": "IT Consultant",
+        "website": "http://google.com",
         "category": "IT Consultancy",
         "skills": ["Strategy", "ITIL", "Cloud", "Networking", "Project Management"],
         "requirements": [
@@ -283,6 +303,7 @@
         "id": 21,
         "name": "SysOps Global",
         "position": "System Administrator",
+        "website": "http://google.com",
         "category": "System Administration",
         "skills": ["Linux", "Windows Server", "Shell Scripting", "VMWare", "Active Directory"],
         "requirements": [
@@ -297,6 +318,7 @@
         "id": 22,
         "name": "TechAssist Inc.",
         "position": "IT Support Specialist",
+        "website": "http://google.com",
         "category": "IT Support",
         "skills": ["Windows", "Help Desk", "Ticketing Systems", "Troubleshooting", "Remote Support"],
         "requirements": [

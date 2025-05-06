@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import hiring from '@/../public/hiring.json';
 import skills from '@/../public/skills.json';
 import Swal from 'sweetalert2';
+import Link from 'next/link';
 
 const calculateMatchPercentage = (jobSkills, userSkills) => {
   const jobSet = new Set(jobSkills.map(s => s.toLowerCase()));
@@ -73,7 +74,7 @@ const JobList = () => {
                   </div>
 
                   <h2 className="card-title text-blue-500">{data.position}</h2>
-                  <p className="text-gray-500 text-lg">{data.name}</p>
+                  <Link href={data.website} target="_blank" className="text-gray-500 text-lg">{data.name}</Link>
 
                   <p className="font-bold text-base text-rose-600">
                     Requirements:
