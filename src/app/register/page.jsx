@@ -10,7 +10,7 @@ const page = () => {
                         <h1 className="text-5xl font-bold text-primary mb-5">Register now!</h1>
 
                     </div>
-                    <div className="card bg-base-100 w-96 shadow-2xl border-primary border-2">
+                    <div className="card bg-base-100 w-80 md:w-96 shadow-2xl border-primary border-2">
                         <div className="card-body">
                             <form className="fieldset">
                                 <label className="label">Name</label>
@@ -31,9 +31,9 @@ const page = () => {
                                     <label className="label">Max size 2MB</label>
                                 </fieldset>
 
-                                <button className="btn btn-primary mt-4">Register</button>
+                                <button className="btn btn-primary mt-4 text-white">Register</button>
                             </form>
-                            <p className='text-xs'>Already have an account? <Link href="/login">Login Now</Link></p>
+                            <p className='text-xs'>Already have an account? <Link href="/login" className='text-primary font-bold'>Login Now</Link></p>
                         </div>
                     </div>
                 </div>
