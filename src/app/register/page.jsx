@@ -7,10 +7,10 @@ const page = () => {
             <div className="hero bg-base-200">
                 <div className="hero-content flex-col mt-10">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold text-primary">Register now!</h1>
+                        <h1 className="text-5xl font-bold text-primary mb-5">Register now!</h1>
 
                     </div>
-                    <div className="card bg-base-100 w-96 shadow-2xl">
+                    <div className="card bg-base-100 w-96 shadow-2xl border-primary border-2">
                         <div className="card-body">
                             <form className="fieldset">
                                 <label className="label">Name</label>
