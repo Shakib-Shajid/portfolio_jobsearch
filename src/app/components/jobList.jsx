@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import hiring from '@/../public/hiring.json';
 import skills from '@/../public/skills.json';
@@ -26,6 +26,8 @@ const JobList = () => {
 
     return matchesCategory && matchesSearch;
   });
+
+  const [clickedJobs, setClickedJobs] = useState({});
 
   return (
     <div>
@@ -84,9 +86,18 @@ const JobList = () => {
                   </p>
 
                   <div className="justify-end card-actions mt-2">
-                    <button className={`btn text-white w-full mx-auto ${percentage < 50 ? 'bg-red-600' : 'btn-info'}`}>
+                    {/* <button className={`btn text-white w-full mx-auto ${percentage < 50 ? 'bg-red-600' : 'btn-info'}`} >
                       Apply
+                    </button> */}
+                    <button
+                      onClick={() => setClickedJobs(prev => ({ ...prev, [data.id]: true }))}
+                      className={`btn text-white w-full mx-auto
+                        ${clickedJobs[data.id] ? 'bg-green-600' : percentage < 50 ? 'bg-red-600' : 'btn-info'}
+                        ${clickedJobs[data.id] ? 'opacity-100' : ''}`}
+                    >
+                      {clickedJobs[data.id] ? "Applied" : "Apply"}
                     </button>
+
                   </div>
                 </div>
               </div>
