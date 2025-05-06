@@ -33,14 +33,14 @@ const Page = () => {
 
     return (
         <div className='flex w-96 md:w-full mx-auto'>
-            <div className='flex flex-col gap-5 mx-auto border-info rounded-2xl border-2 md:p-20'>
+            <div className='flex flex-col gap-5 mx-auto border-info rounded-2xl border-2 pt-10 md:p-20'>
                 <h3 className='text-3xl font-bold text-center text-info'>Hiring Form</h3>
 
-                <input type="text" className='input input-info border-2 rounded-xl w-96 mx-auto p-5' placeholder='Company Name' />
-                <input type="text" className='input input-info border-2 rounded-xl w-96 mx-auto p-5' placeholder='Position Name' />
+                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Company Name' />
+                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Position Name' />
 
                 {/* Requirement Input + Button */}
-                <form onSubmit={addRequirement} className="relative w-96 mx-auto">
+                <form onSubmit={addRequirement} className="relative w-80 md:w-96 mx-auto">
                     <input
                         type="text"
                         value={requirementInput}
@@ -67,7 +67,7 @@ const Page = () => {
                 </div>
 
                 {/* Skill Selector */}
-                <select onChange={handleSkillSelect} defaultValue="Pick required skills" className="select input-info border-2 rounded-xl w-96 mx-auto text-gray-400">
+                <select onChange={handleSkillSelect} defaultValue="Pick required skills" className="select input-info border-2 rounded-xl w-80 md:w-96 mx-auto text-gray-400">
                     <option disabled>Pick required skills</option>
                     {cseskills.map((cseskill, index) => (
                         <option key={index} value={cseskill}>{cseskill}</option>
@@ -83,7 +83,7 @@ const Page = () => {
                     ))}
                 </div>
 
-                <input type="submit" className='btn btn-info text-white rounded-xl' />
+                <input type="submit" className='btn btn-info text-white rounded-xl w-80 md:w-96 mx-auto mb-10 md:mb-0' />
             </div>
         </div>
     );
