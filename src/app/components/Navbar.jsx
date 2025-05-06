@@ -35,7 +35,7 @@ const Navbar = () => {
                             <li><Link href="/jobs">Jobs</Link></li>
                         </ul>
                     </div>
-                    <Link href="/" className="btn btn-ghost text-xl -ml-5 lg:ml-0">Portfolio & Job</Link>
+                    <Link href="/" className="btn btn-ghost text-lg md:text-xl -ml-5 lg:ml-0">Portfolio & Job</Link>
                 </div>
 
                 <div className="navbar-center hidden lg:flex gap-5">
@@ -46,7 +46,7 @@ const Navbar = () => {
                 <div className="flex gap-2 navbar-end relative">
                     <input
                         type="text"
-                        placeholder="Search Job Here"
+                        placeholder="Search Job"
                         className="input input-bordered w-36 md:w-auto rounded-full text-xs md:text-sm"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
