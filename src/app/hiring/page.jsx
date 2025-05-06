@@ -58,7 +58,7 @@ const Page = () => {
 
 
                 {/* Requirements Display */}
-                <div className="flex flex-wrap gap-2 w-96 mx-auto">
+                <div className="flex flex-wrap gap-2 w-80 md:w-96 mx-auto">
                     {requirements.map((req, index) => (
                         <div key={index} className="badge badge-outline badge-primary p-3 cursor-pointer hover:badge-error" onClick={() => removeRequirement(req)}>
                             {req} ✕
@@ -75,7 +75,7 @@ const Page = () => {
                 </select>
 
                 {/* Selected Skills Display */}
-                <div className="flex flex-wrap gap-2 w-96 mx-auto">
+                <div className="flex flex-wrap gap-2 w-80 md:w-96 mx-auto">
                     {selectedSkills.map((skill, index) => (
                         <div key={index} className="badge badge-outline badge-info p-3 cursor-pointer hover:badge-error" onClick={() => removeSkill(skill)}>
                             {skill} ✕
