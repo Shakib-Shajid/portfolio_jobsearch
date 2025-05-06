@@ -50,7 +50,7 @@ const Page = () => {
                     />
                     <button
                         type="submit"
-                        className="absolute right-1 top-5 transform -translate-y-1/2 bg-info text-white btn-sm rounded-full text-xl px-2  shadow-md z-10">
+                        className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-info text-white btn-sm rounded-full text-xl px-2  shadow-md z-10">
                         
                         +
                     </button>
