@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import hiring from '@/../public/hiring.json';
 import skills from '@/../public/skills.json';
+import Swal from 'sweetalert2';
 
 const calculateMatchPercentage = (jobSkills, userSkills) => {
   const jobSet = new Set(jobSkills.map(s => s.toLowerCase()));
@@ -28,6 +29,16 @@ const JobList = () => {
   });
 
   const [clickedJobs, setClickedJobs] = useState({});
+  const [toastMessage, setToastMessage] = useState('');
+  if (toastMessage) {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Your work has been saved",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 
   return (
     <div>
@@ -90,22 +101,28 @@ const JobList = () => {
                       Apply
                     </button> */}
                     <button
-                      onClick={() => setClickedJobs(prev => ({ ...prev, [data.id]: true }))}
+                      onClick={() => {
+                        if (!clickedJobs[data.id]) {
+                          setClickedJobs(prev => ({ ...prev, [data.id]: true }));
+                          setToastMessage(`You have applied to ${data.position} at ${data.name}`);
+                          setTimeout(() => setToastMessage(''), 3000); // Hide toast after 3 seconds
+                        }
+                      }}
                       className={`btn text-white w-full mx-auto
-                        ${clickedJobs[data.id] ? 'bg-green-600' : percentage < 50 ? 'bg-red-600' : 'btn-info'}
-                        ${clickedJobs[data.id] ? 'opacity-100' : ''}`}
+                      ${clickedJobs[data.id] ? 'bg-green-600' : percentage < 50 ? 'bg-red-600' : 'btn-info'}
+                      ${clickedJobs[data.id] ? 'opacity-100' : ''}`}
                     >
                       {clickedJobs[data.id] ? "Applied" : "Apply"}
                     </button>
-
+                
                   </div>
                 </div>
               </div>
             );
           })}
-        </div>
+        </div >
       )}
-    </div>
+    </div >
   );
 };
 
