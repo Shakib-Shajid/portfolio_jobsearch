@@ -1,11 +1,10 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import hiring from '@/../public/hiring.json';
+import skills from '@/../public/skills.json';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
-
-// Mock user skills, replace with actual user data.
-const userSkills = ["React", "Tailwind", "JavaScript", "Node.js"];
 
 const calculateMatchPercentage = (jobSkills, userSkills) => {
   const jobSet = new Set(jobSkills.map(s => s.toLowerCase()));
@@ -15,33 +14,11 @@ const calculateMatchPercentage = (jobSkills, userSkills) => {
 };
 
 const JobList = () => {
-  const [jobs, setJobs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [clickedJobs, setClickedJobs] = useState({});
-  const [toastMessage, setToastMessage] = useState('');
-
   const searchParams = useSearchParams();
   const selectedCategory = searchParams.get('category');
   const searchQuery = searchParams.get('search')?.toLowerCase() || '';
 
-  useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/jobs/api/getAll');
-        const data = await response.json();
-        setJobs(data.users); // Set jobs from API response
-        setLoading(false);
-      } catch (error) {
-        setError('Failed to fetch jobs.');
-        setLoading(false);
-      }
-    };
-
-    fetchJobs();
-  }, []);
-
-  const filteredJobs = jobs.filter(job => {
+  const filteredJobs = hiring.filter(job => {
     const matchesCategory = selectedCategory ? job.category === selectedCategory : true;
     const matchesSearch =
       job.position.toLowerCase().includes(searchQuery) ||
@@ -52,22 +29,16 @@ const JobList = () => {
     return matchesCategory && matchesSearch;
   });
 
+  const [clickedJobs, setClickedJobs] = useState({});
+  const [toastMessage, setToastMessage] = useState('');
   if (toastMessage) {
     Swal.fire({
       position: "top-end",
       icon: "success",
       title: "Applied Successfully",
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     });
-  }
-
-  if (loading) {
-    return <div className="text-center text-lg py-10">Loading jobs...</div>;
-  }
-
-  if (error) {
-    return <div className="text-center text-red-500 py-10">{error}</div>;
   }
 
   return (
@@ -82,11 +53,11 @@ const JobList = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {filteredJobs.map(data => {
-            const percentage = calculateMatchPercentage(data.skills, userSkills); // Pass the actual user skills
+            const percentage = calculateMatchPercentage(data.skills, skills);
 
             return (
               <div
-                key={data._id}
+                key={data.id}
                 className="card w-[90%] mx-auto bg-base-100 card-xl border-blue-600 border-2 shadow-xl relative"
               >
                 <div className="card-body relative">
@@ -127,28 +98,32 @@ const JobList = () => {
                   </p>
 
                   <div className="justify-end card-actions mt-2">
+                    {/* <button className={`btn text-white w-full mx-auto ${percentage < 50 ? 'bg-red-600' : 'btn-info'}`} >
+                      Apply
+                    </button> */}
                     <button
                       onClick={() => {
-                        if (!clickedJobs[data._id]) {
-                          setClickedJobs(prev => ({ ...prev, [data._id]: true }));
+                        if (!clickedJobs[data.id]) {
+                          setClickedJobs(prev => ({ ...prev, [data.id]: true }));
                           setToastMessage(`You have applied to ${data.position} at ${data.name}`);
                           setTimeout(() => setToastMessage(''), 3000); // Hide toast after 3 seconds
                         }
                       }}
                       className={`btn text-white w-full mx-auto
-                      ${clickedJobs[data._id] ? 'bg-green-600' : percentage < 50 ? 'bg-red-600' : 'btn-info'}
-                      ${clickedJobs[data._id] ? 'opacity-100' : ''}`}
+                      ${clickedJobs[data.id] ? 'bg-green-600' : percentage < 50 ? 'bg-red-600' : 'btn-info'}
+                      ${clickedJobs[data.id] ? 'opacity-100' : ''}`}
                     >
-                      {clickedJobs[data._id] ? "Applied" : "Apply"}
+                      {clickedJobs[data.id] ? "Applied" : "Apply"}
                     </button>
+                
                   </div>
                 </div>
               </div>
             );
           })}
-        </div>
+        </div >
       )}
-    </div>
+    </div >
   );
 };
 
