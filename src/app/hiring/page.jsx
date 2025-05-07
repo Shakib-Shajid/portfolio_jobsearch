@@ -67,9 +67,9 @@ const Page = () => {
                             text: "Your hiring post has been created.",
                             icon: "success"
                         });
-                        formRef.current.reset();          // ✅ Resets all form inputs
-                        setRequirements([]);             // ✅ Clear requirements
-                        setSelectedSkills([]);           // ✅ Clear selected skills
+                        formRef.current.reset();        
+                        setRequirements([]);            
+                        setSelectedSkills([]);          
                         setRequirementInput('');
                     })
                     .catch(error => {

@@ -1,10 +1,10 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import hiring from '@/../public/hiring.json';
 import skills from '@/../public/skills.json';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
+import axios from 'axios';
 
 const calculateMatchPercentage = (jobSkills, userSkills) => {
   const jobSet = new Set(jobSkills.map(s => s.toLowerCase()));
@@ -18,6 +18,35 @@ const JobList = () => {
   const selectedCategory = searchParams.get('category');
   const searchQuery = searchParams.get('search')?.toLowerCase() || '';
 
+  const [hiring, setHiring] = useState([]);
+  const [clickedJobs, setClickedJobs] = useState({});
+  const [toastMessage, setToastMessage] = useState('');
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const jobData = await axios.get("http://localhost:3000/jobs/api/getAll");
+        setHiring(jobData.data.users || []); // Correct extraction from JSON
+      } catch (error) {
+        console.error('Failed to fetch jobs:', error);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
+  useEffect(() => {
+    if (toastMessage) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Applied Successfully",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+  }, [toastMessage]);
+
   const filteredJobs = hiring.filter(job => {
     const matchesCategory = selectedCategory ? job.category === selectedCategory : true;
     const matchesSearch =
@@ -28,18 +57,6 @@ const JobList = () => {
 
     return matchesCategory && matchesSearch;
   });
-
-  const [clickedJobs, setClickedJobs] = useState({});
-  const [toastMessage, setToastMessage] = useState('');
-  if (toastMessage) {
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Applied Successfully",
-      showConfirmButton: false,
-      timer: 1500
-    });
-  }
 
   return (
     <div>
@@ -57,7 +74,7 @@ const JobList = () => {
 
             return (
               <div
-                key={data.id}
+                key={data._id}
                 className="card w-[90%] mx-auto bg-base-100 card-xl border-blue-600 border-2 shadow-xl relative"
               >
                 <div className="card-body relative">
@@ -98,32 +115,28 @@ const JobList = () => {
                   </p>
 
                   <div className="justify-end card-actions mt-2">
-                    {/* <button className={`btn text-white w-full mx-auto ${percentage < 50 ? 'bg-red-600' : 'btn-info'}`} >
-                      Apply
-                    </button> */}
                     <button
                       onClick={() => {
-                        if (!clickedJobs[data.id]) {
-                          setClickedJobs(prev => ({ ...prev, [data.id]: true }));
+                        if (!clickedJobs[data._id]) {
+                          setClickedJobs(prev => ({ ...prev, [data._id]: true }));
                           setToastMessage(`You have applied to ${data.position} at ${data.name}`);
-                          setTimeout(() => setToastMessage(''), 3000); // Hide toast after 3 seconds
+                          setTimeout(() => setToastMessage(''), 3000);
                         }
                       }}
                       className={`btn text-white w-full mx-auto
-                      ${clickedJobs[data.id] ? 'bg-green-600' : percentage < 50 ? 'bg-red-600' : 'btn-info'}
-                      ${clickedJobs[data.id] ? 'opacity-100' : ''}`}
+                      ${clickedJobs[data._id] ? 'bg-green-600' : percentage < 50 ? 'bg-red-600' : 'btn-info'}
+                      ${clickedJobs[data._id] ? 'opacity-100' : ''}`}
                     >
-                      {clickedJobs[data.id] ? "Applied" : "Apply"}
+                      {clickedJobs[data._id] ? "Applied" : "Apply"}
                     </button>
-                
                   </div>
                 </div>
               </div>
             );
           })}
-        </div >
+        </div>
       )}
-    </div >
+    </div>
   );
 };
 
