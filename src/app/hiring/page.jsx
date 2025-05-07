@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import cseskills from '@/../public/cseskills.json';
+import categories from '@/../public/category.json';
 
 const Page = () => {
     const [selectedSkills, setSelectedSkills] = useState([]);
@@ -37,7 +38,21 @@ const Page = () => {
                 <h3 className='text-3xl font-bold text-center text-info'>Hiring Form</h3>
 
                 <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Company Name' />
+
                 <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Position Name' />
+
+                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Website Name' />
+
+
+                <select defaultValue="Select Category" className="select input-info border-2 rounded-xl w-80 md:w-96 mx-auto text-gray-400">
+                    <option disabled={true}>Select Category</option>
+                    {
+                        categories.map((category, index) =>
+                            <option key={index}>{category}</option>
+                        )
+                    }
+
+                </select>
 
                 {/* Requirement Input + Button */}
                 <form onSubmit={addRequirement} className="relative w-80 md:w-96 mx-auto">
@@ -51,7 +66,7 @@ const Page = () => {
                     <button
                         type="submit"
                         className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-info text-white btn-sm rounded-full text-xl px-2  shadow-md z-10">
-                        
+
                         +
                     </button>
                 </form>
@@ -60,7 +75,7 @@ const Page = () => {
                 {/* Requirements Display */}
                 <div className="flex flex-wrap gap-2 w-80 md:w-96 mx-auto">
                     {requirements.map((req, index) => (
-                        <div key={index} className="badge badge-outline badge-primary p-3 cursor-pointer hover:badge-error" onClick={() => removeRequirement(req)}>
+                        <div key={index} className='text-gray-500 border rounded-2xl px-2 py-1 inline-flex text-sm hover:bg-accent hover:text-white' onClick={() => removeRequirement(req)}>
                             {req} ✕
                         </div>
                     ))}
@@ -77,7 +92,7 @@ const Page = () => {
                 {/* Selected Skills Display */}
                 <div className="flex flex-wrap gap-2 w-80 md:w-96 mx-auto">
                     {selectedSkills.map((skill, index) => (
-                        <div key={index} className="badge badge-outline badge-info p-3 cursor-pointer hover:badge-error" onClick={() => removeSkill(skill)}>
+                        <div key={index} className='text-gray-500 border rounded-2xl px-2 py-1 inline-flex text-sm hover:bg-accent hover:text-white' onClick={() => removeSkill(skill)}>
                             {skill} ✕
                         </div>
                     ))}

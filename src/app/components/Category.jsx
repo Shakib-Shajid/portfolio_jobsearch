@@ -1,30 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
+import categories from '@/../public/category.json';
 
 const Category = () => {
 
-    const categories = [
-        "Software Development",
-        "Web Development",
-        "Mobile App Development",
-        "Cloud Computing",
-        "Cybersecurity",
-        "Data Science",
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Blockchain Technology",
-        "DevOps",
-        "IT Support",
-        "Network Administration",
-        "Database Management",
-        "UI/UX Design",
-        "Game Development",
-        "Embedded Systems",
-        "QA & Testing",
-        "Business Intelligence",
-        "IT Consultancy",
-        "System Administration"
-    ];
+    
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-8">
