@@ -1,10 +1,11 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import skills from '@/../public/skills.json';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
-import axios from 'axios';
+
+// Mock user skills, replace with actual user data.
+const userSkills = ["React", "Tailwind", "JavaScript", "Node.js"];
 
 const calculateMatchPercentage = (jobSkills, userSkills) => {
   const jobSet = new Set(jobSkills.map(s => s.toLowerCase()));
@@ -14,40 +15,33 @@ const calculateMatchPercentage = (jobSkills, userSkills) => {
 };
 
 const JobList = () => {
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [clickedJobs, setClickedJobs] = useState({});
+  const [toastMessage, setToastMessage] = useState('');
+
   const searchParams = useSearchParams();
   const selectedCategory = searchParams.get('category');
   const searchQuery = searchParams.get('search')?.toLowerCase() || '';
 
-  const [hiring, setHiring] = useState([]);
-  const [clickedJobs, setClickedJobs] = useState({});
-  const [toastMessage, setToastMessage] = useState('');
-
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const jobData = await axios.get("http://localhost:3000/jobs/api/getAll");
-        setHiring(jobData.data.users || []); // Correct extraction from JSON
+        const response = await fetch('http://localhost:3000/jobs/api/getAll');
+        const data = await response.json();
+        setJobs(data.users); // Set jobs from API response
+        setLoading(false);
       } catch (error) {
-        console.error('Failed to fetch jobs:', error);
+        setError('Failed to fetch jobs.');
+        setLoading(false);
       }
     };
 
     fetchJobs();
   }, []);
 
-  useEffect(() => {
-    if (toastMessage) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Applied Successfully",
-        showConfirmButton: false,
-        timer: 1500
-      });
-    }
-  }, [toastMessage]);
-
-  const filteredJobs = hiring.filter(job => {
+  const filteredJobs = jobs.filter(job => {
     const matchesCategory = selectedCategory ? job.category === selectedCategory : true;
     const matchesSearch =
       job.position.toLowerCase().includes(searchQuery) ||
@@ -57,6 +51,24 @@ const JobList = () => {
 
     return matchesCategory && matchesSearch;
   });
+
+  if (toastMessage) {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Applied Successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
+
+  if (loading) {
+    return <div className="text-center text-lg py-10">Loading jobs...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center text-red-500 py-10">{error}</div>;
+  }
 
   return (
     <div>
@@ -70,7 +82,7 @@ const JobList = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {filteredJobs.map(data => {
-            const percentage = calculateMatchPercentage(data.skills, skills);
+            const percentage = calculateMatchPercentage(data.skills, userSkills); // Pass the actual user skills
 
             return (
               <div
@@ -120,7 +132,7 @@ const JobList = () => {
                         if (!clickedJobs[data._id]) {
                           setClickedJobs(prev => ({ ...prev, [data._id]: true }));
                           setToastMessage(`You have applied to ${data.position} at ${data.name}`);
-                          setTimeout(() => setToastMessage(''), 3000);
+                          setTimeout(() => setToastMessage(''), 3000); // Hide toast after 3 seconds
                         }
                       }}
                       className={`btn text-white w-full mx-auto
