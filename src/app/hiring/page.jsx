@@ -1,10 +1,12 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState,useRef  } from 'react';
 import cseskills from '@/../public/cseskills.json';
 import categories from '@/../public/category.json';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Page = () => {
+    const formRef = useRef(null);
     const [selectedSkills, setSelectedSkills] = useState([]);
     const [requirements, setRequirements] = useState([]);
     const [requirementInput, setRequirementInput] = useState('');
@@ -36,19 +38,50 @@ const Page = () => {
     const createPost = async (event) => {
         event.preventDefault();
 
-        const newCreate = {
-            cname: event.target.cname.value,
-            pname: event.target.pname.value,
-            email: event.target.email.value,
-            wname: event.target.wname.value,
-            category: event.target.category.value,
-            requirements: requirements,
-            skills: selectedSkills
-        }
+        // Show SweetAlert2 confirmation dialog
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, submit it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Proceed with form submission if confirmed
+                const newCreate = {
+                    cname: event.target.cname.value,
+                    pname: event.target.pname.value,
+                    email: event.target.email.value,
+                    wname: event.target.wname.value,
+                    category: event.target.category.value,
+                    requirements: requirements,
+                    skills: selectedSkills
+                }
 
-        axios.post('http://localhost:3000/hiring/api', newCreate)
-            .then(res => console.log(res))
-            .catch(error => console.log(error))
+                axios.post('http://localhost:3000/hiring/api', newCreate)
+                    .then(res => {
+                        Swal.fire({
+                            title: "Success!",
+                            text: "Your hiring post has been created.",
+                            icon: "success"
+                        });
+                        formRef.current.reset();          // ✅ Resets all form inputs
+                        setRequirements([]);             // ✅ Clear requirements
+                        setSelectedSkills([]);           // ✅ Clear selected skills
+                        setRequirementInput('');
+                    })
+                    .catch(error => {
+                        Swal.fire({
+                            title: "Error!",
+                            text: "There was an issue with your submission.",
+                            icon: "error"
+                        });
+                        console.log(error);
+                    });
+            }
+        });
     }
 
     return (
@@ -56,7 +89,7 @@ const Page = () => {
             <div className='flex flex-col gap-5 mx-auto border-info rounded-2xl border-2 pt-10 md:p-20 w-96 md:w-[80%] lg:w-[50%]'>
                 <h3 className='text-3xl font-bold text-center text-info'>Hiring Form</h3>
 
-                <form onSubmit={createPost} className="flex flex-col gap-5 items-center">
+                <form onSubmit={createPost} ref={formRef} className="flex flex-col gap-5 items-center">
 
                     <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 p-5' name="cname" placeholder='Company Name' required />
 
@@ -124,7 +157,7 @@ const Page = () => {
                     </div>
 
                     {/* <input type="" className='btn btn-info text-white rounded-xl w-80 md:w-96 mb-10 md:mb-0' /> */}
-                    <button className='btn btn-info text-white rounded-xl w-80 md:w-96 mb-10 md:mb-0'>submit</button>
+                    <button className='btn btn-info text-white rounded-xl w-80 md:w-96 mb-10 md:mb-0'>Submit</button>
                 </form>
             </div>
         </div>
