@@ -1,11 +1,19 @@
+"use client"
 import Link from 'next/link';
 import React from 'react';
 import experiences from "../../../public/experiences.json"
 import projects from "../../../public/projects.json"
 import skills from "../../../public/skills.json"
+import { useSession } from 'next-auth/react';
 
 
 const page = () => {
+
+    const session = useSession();
+    console.log(session?.data?.user?.name);
+    console.log(session?.data?.user?.email);
+    const pName = session?.data?.user?.name;
+    const email = session?.data?.user?.email;
 
     return (
         <div>
@@ -28,7 +36,7 @@ const page = () => {
                                     Full Name
                                 </dt>
                                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                    ABCD EFGH
+                                    {pName}
                                 </dd>
                             </div>
 

@@ -2,28 +2,49 @@
 import Link from 'next/link';
 import React from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const page = () => {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-    
-    const newUser = {
-      name: event.target.name.value,
-      email: event.target.email.value,
-      password: event.target.password.value,
-    };
+
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    const rpassword = event.target.rpassword.value;
+
+
+    if (password !== rpassword) {
+      Swal.fire({
+        icon: "error",
+        title: "Password Mismatch",
+        text: "Password and Confirm Password do not match.",
+      });
+      return; // Stop further execution
+    }
+    const newUser = { name, email, password };
 
     try {
       const response = await axios.post("http://localhost:3000/register/api", newUser);
 
       if (response.status === 200) {
         event.target.reset();
-        alert("User registered successfully!");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User registered successfully!",
+          showConfirmButton: false,
+          timer: 1500
+        });
       }
     } catch (error) {
-      console.error("Signup error:", error);
-      alert("Something went wrong during registration.");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
     }
   };
 
@@ -47,7 +68,7 @@ const page = () => {
                 <input type="password" className="input input-primary" placeholder="Password" name="password" />
 
                 <label className="label">Repeat Password</label>
-                <input type="password" className="input input-primary" placeholder="Password" name="rpass" />
+                <input type="password" className="input input-primary" placeholder="Password" name="rpassword" />
 
                 <fieldset className="fieldset">
                   <legend className="fieldset-legend font-normal text-gray-500">Pick a image</legend>
