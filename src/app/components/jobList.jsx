@@ -124,6 +124,7 @@ const JobList = () => {
                       </span>
                     ))}
                   </p>
+                  <p className='text-lg text-violet-600 font-bold'>Salary: {new Intl.NumberFormat('en-IN').format(data.salary)} BDT</p>
 
                   <div className="justify-end card-actions mt-2">
                     <button

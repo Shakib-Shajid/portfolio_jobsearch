@@ -3,10 +3,15 @@
 import Link from 'next/link';
 import React, { useState } from "react";
 import { useRouter } from 'next/navigation';
+import { signOut, useSession } from "next-auth/react";
+
 
 const Navbar = () => {
+
+    const session = useSession()
     const [search, setSearch] = useState("");
     const router = useRouter();
+    console.log(session)
 
     const handleSearch = () => {
         if (search.trim()) {
@@ -62,7 +67,7 @@ const Navbar = () => {
                         Search
                     </button>
 
-
+                    {/* 
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
@@ -74,7 +79,11 @@ const Navbar = () => {
                             <li><Link href="/">Settings</Link></li>
                             <li><Link href="/">Logout</Link></li>
                         </ul>
-                    </div>
+
+                        
+                    </div> */}
+
+               
                 </div>
             </div>
         </div>

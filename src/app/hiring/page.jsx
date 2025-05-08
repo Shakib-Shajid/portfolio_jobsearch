@@ -51,6 +51,7 @@ const Page = () => {
             website: evTar.wname.value,
             email: evTar.email.value,
             category: evTar.category.value,
+            salary: evTar.salary.value,
             requirements: requirements,
             skills: selectedSkills
         }
@@ -79,7 +80,6 @@ const Page = () => {
             });
         }
 
-
     };
 
     return (
@@ -92,6 +92,7 @@ const Page = () => {
                     <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Position Name' name="pname" />
                     <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Website Name' name="wname" />
                     <input type="email" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Company Email' name="email" />
+                    <input type="number" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Salary' name="salary" />
 
                     <select defaultValue="Select Category" className="select input-info border-2 rounded-xl w-80 md:w-96 mx-auto text-gray-400" name="category">
                         <option disabled={true}>Select Category</option>

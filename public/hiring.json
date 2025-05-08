@@ -6,6 +6,7 @@
       "website": "http://google.com",
       "category": "Web Development",
       "skills": ["Next.js", "React", "PHP", "TypeScript", "Tailwind", "Redux"],
+      "salary": "18000",
       "requirements": [
         "Bachelor's degree in Computer Science",
         "0-1 year of experience",
@@ -21,6 +22,7 @@
       "website": "http://google.com",
       "category": "Web Development",
       "skills": ["React", "Tailwind", "JavaScript", "Redux", "HTML", "CSS"],
+      "salary": "25000",
       "requirements": [
         "2+ years of frontend experience",
         "Portfolio of responsive web designs",
@@ -36,6 +38,7 @@
       "website": "http://google.com",
       "category": "Software Development",
       "skills": ["Node.js", "Express", "MongoDB", "PHP", "TypeScript"],
+      "salary": "35000",
       "requirements": [
         "Experience in RESTful APIs",
         "Database schema design knowledge",
@@ -51,6 +54,7 @@
       "website": "http://google.com",
       "category": "Software Development",
       "skills": ["Next.js", "React", "Node.js", "Express", "MySQL", "Tailwind"],
+      "salary": "45000",
       "requirements": [
         "3+ years as full stack developer",
         "Knowledge of modern JS frameworks",
@@ -66,6 +70,7 @@
       "website": "http://google.com",
       "category": "UI/UX Design",
       "skills": ["Figma", "Tailwind", "JavaScript", "React", "HTML", "CSS"],
+      "salary": "25000",
       "requirements": [
         "Design portfolio required",
         "Experience with Figma or Adobe XD",
@@ -81,6 +86,7 @@
       "website": "http://google.com",
       "category": "DevOps",
       "skills": ["AWS", "Docker", "Jenkins", "Linux", "Node.js", "Bash"],
+      "salary": "35000",
       "requirements": [
         "Familiar with CI/CD pipelines",
         "AWS certification is a plus",
@@ -96,6 +102,7 @@
       "website": "http://google.com",
       "category": "Mobile App Development",
       "skills": ["React Native", "TypeScript", "Redux", "Expo", "Firebase"],
+      "salary": "35000",
       "requirements": [
         "Experience in cross-platform development",
         "Published at least one app",
@@ -111,6 +118,7 @@
       "website": "http://google.com",
       "category": "QA & Testing",
       "skills": ["Selenium", "Cypress", "Jest", "Mocha", "JavaScript"],
+      "salary": "45000",
       "requirements": [
         "Understanding of testing frameworks",
         "Automation experience preferred",
@@ -126,6 +134,7 @@
       "website": "http://google.com",
       "category": "Data Science",
       "skills": ["Python", "SQL", "Airflow", "AWS", "ETL", "MongoDB"],
+      "salary": "45000",
       "requirements": [
         "Experience with data pipelines",
         "Understanding of ETL workflows",
@@ -141,6 +150,7 @@
       "website": "http://google.com",
       "category": "Cloud Computing",
       "skills": ["AWS", "Azure", "Terraform", "Docker", "Kubernetes"],
+      "salary": "35000",
       "requirements": [
         "Cloud platform certification preferred",
         "Experience with infrastructure as code",
@@ -156,6 +166,7 @@
         "website": "http://google.com",
         "category": "Cybersecurity",
         "skills": ["Firewalls", "IDS/IPS", "Python", "SIEM", "Risk Assessment"],
+        "salary": "60000",
         "requirements": [
           "Experience with threat detection",
           "Familiarity with SIEM tools",
@@ -171,6 +182,7 @@
         "website": "http://google.com",
         "category": "Artificial Intelligence",
         "skills": ["Python", "TensorFlow", "PyTorch", "Deep Learning", "NLP"],
+        "salary": "60000",
         "requirements": [
           "Experience with AI models",
           "Strong Python and ML framework knowledge",
@@ -186,6 +198,7 @@
         "website": "http://google.com",
         "category": "Blockchain Technology",
         "skills": ["Solidity", "Ethereum", "Web3.js", "Smart Contracts", "Truffle"],
+        "salary": "80000",
         "requirements": [
           "Understanding of blockchain architecture",
           "Smart contract development experience",
@@ -201,6 +214,7 @@
         "website": "http://google.com",
         "category": "Machine Learning",
         "skills": ["Scikit-learn", "Python", "Pandas", "XGBoost", "MLFlow"],
+        "salary": "70000",
         "requirements": [
           "Experience in ML algorithms",
           "Good statistical and data science background",
@@ -216,6 +230,7 @@
         "website": "http://google.com",
         "category": "Network Administration",
         "skills": ["Cisco", "VPN", "Firewall", "Wireshark", "Linux"],
+        "salary": "50000",
         "requirements": [
           "Knowledge of LAN/WAN",
           "Firewall configuration skills",
@@ -231,6 +246,7 @@
         "website": "http://google.com",
         "category": "Database Management",
         "skills": ["MySQL", "PostgreSQL", "MongoDB", "Backup/Recovery", "SQL"],
+        "salary": "45000",
         "requirements": [
           "Database performance tuning experience",
           "Knowledge of RDBMS and NoSQL",
@@ -246,6 +262,7 @@
         "website": "http://google.com",
         "category": "Game Development",
         "skills": ["Unity", "C#", "Blender", "Photon", "Game Physics"],
+        "salary": "55000",
         "requirements": [
           "Experience in game mechanics",
           "Published game projects",
@@ -261,6 +278,7 @@
         "website": "http://google.com",
         "category": "Embedded Systems",
         "skills": ["C", "C++", "RTOS", "Microcontrollers", "IoT"],
+        "salary": "45000",
         "requirements": [
           "Experience with embedded C/C++",
           "Knowledge of ARM Cortex or AVR",
@@ -276,6 +294,7 @@
         "website": "http://google.com",
         "category": "Business Intelligence",
         "skills": ["Power BI", "Tableau", "SQL", "Data Modeling", "ETL"],
+        "salary": "35000",
         "requirements": [
           "Experience with BI reporting tools",
           "Strong analytical mindset",
@@ -291,6 +310,7 @@
         "website": "http://google.com",
         "category": "IT Consultancy",
         "skills": ["Strategy", "ITIL", "Cloud", "Networking", "Project Management"],
+        "salary": "40000",
         "requirements": [
           "Experience advising clients",
           "IT infrastructure understanding",
@@ -306,6 +326,7 @@
         "website": "http://google.com",
         "category": "System Administration",
         "skills": ["Linux", "Windows Server", "Shell Scripting", "VMWare", "Active Directory"],
+        "salary": "45000",
         "requirements": [
           "System monitoring and maintenance experience",
           "Server setup and backup knowledge",
@@ -321,6 +342,7 @@
         "website": "http://google.com",
         "category": "IT Support",
         "skills": ["Windows", "Help Desk", "Ticketing Systems", "Troubleshooting", "Remote Support"],
+        "salary": "35000",
         "requirements": [
           "Experience in Level 1/2 support",
           "Familiarity with common ticketing tools",
