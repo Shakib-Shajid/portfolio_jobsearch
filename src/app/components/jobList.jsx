@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Swal from 'sweetalert2';
-import Link from 'next/link';
-import getAllPosts from '@/lib/getAllPost';  // Import the getAllPosts function
+import getAllPosts from '@/lib/getAllPost';
 
 const calculateMatchPercentage = (jobSkills, userSkills) => {
+  if (!jobSkills?.length || !userSkills?.length) return 0;
   const jobSet = new Set(jobSkills.map(s => s.toLowerCase()));
   const userSet = new Set(userSkills.map(s => s.toLowerCase()));
   const matched = [...jobSet].filter(skill => userSet.has(skill));
@@ -18,18 +18,28 @@ const JobList = () => {
   const searchQuery = searchParams.get('search')?.toLowerCase() || '';
 
   const [users, setUsers] = useState([]);
+  const [userSkills, setUserSkills] = useState([]);
   const [clickedJobs, setClickedJobs] = useState({});
   const [toastMessage, setToastMessage] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+
+  // Fetch your skills from public/skills.json
+  useEffect(() => {
+    const fetchSkills = async () => {
+      const res = await fetch('/skills.json');
+      const skills = await res.json();
+      setUserSkills(skills);
+    };
+    fetchSkills();
+  }, []);
 
   // Fetch job data from API using getAllPosts function
   useEffect(() => {
     const fetchData = async () => {
       const { users } = await getAllPosts();
-      setUsers(users);  // Set fetched job data to state
-      setIsLoading(false);  // Set loading state to false once data is fetched
+      setUsers(users);
+      setIsLoading(false);
     };
-
     fetchData();
   }, []);
 
@@ -40,7 +50,6 @@ const JobList = () => {
       job.name.toLowerCase().includes(searchQuery) ||
       job.category.toLowerCase().includes(searchQuery) ||
       job.skills.some(skill => skill.toLowerCase().includes(searchQuery));
-
     return matchesCategory && matchesSearch;
   });
 
@@ -68,13 +77,10 @@ const JobList = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {filteredJobs.map(data => {
-            const percentage = calculateMatchPercentage(data.skills, ['Next.js', 'React', 'PHP']);  // Example skills array
+            const percentage = calculateMatchPercentage(data.skills, userSkills);
 
             return (
-              <div
-                key={data._id}
-                className="card w-[90%] mx-auto bg-base-100 card-xl border-blue-600 border-2 shadow-xl relative"
-              >
+              <div key={data._id} className="card w-[90%] mx-auto bg-base-100 card-xl border-blue-600 border-2 shadow-xl relative">
                 <div className="card-body relative">
                   <div className="absolute right-4 top-4 text-center">
                     <p className={`text-xs font-medium mb-1 ${percentage < 50 ? 'text-red-500' : 'text-green-500'}`}>
@@ -89,9 +95,14 @@ const JobList = () => {
                   </div>
 
                   <h2 className="card-title text-blue-500">{data.position}</h2>
-                  <Link href={data.website} target="_blank" className="text-gray-500 text-lg">
+                  <a
+                    href={data.website ? (data.website.startsWith('http') ? data.website : `https://${data.website}`) : '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 text-lg"
+                  >
                     {data.name}
-                  </Link>
+                  </a>
 
                   <p className="font-bold text-base text-rose-600">
                     Requirements:
@@ -120,7 +131,7 @@ const JobList = () => {
                         if (!clickedJobs[data._id]) {
                           setClickedJobs(prev => ({ ...prev, [data._id]: true }));
                           setToastMessage(`You have applied to ${data.position} at ${data.name}`);
-                          setTimeout(() => setToastMessage(''), 3000); // Hide toast after 3 seconds
+                          setTimeout(() => setToastMessage(''), 3000);
                         }
                       }}
                       className={`btn text-white w-full mx-auto
