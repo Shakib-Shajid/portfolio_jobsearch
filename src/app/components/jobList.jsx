@@ -1,10 +1,9 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import hiring from '@/../public/hiring.json';
-import skills from '@/../public/skills.json';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
+import getAllPosts from '@/lib/getAllPost';  // Import the getAllPosts function
 
 const calculateMatchPercentage = (jobSkills, userSkills) => {
   const jobSet = new Set(jobSkills.map(s => s.toLowerCase()));
@@ -18,7 +17,23 @@ const JobList = () => {
   const selectedCategory = searchParams.get('category');
   const searchQuery = searchParams.get('search')?.toLowerCase() || '';
 
-  const filteredJobs = hiring.filter(job => {
+  const [users, setUsers] = useState([]);
+  const [clickedJobs, setClickedJobs] = useState({});
+  const [toastMessage, setToastMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Fetch job data from API using getAllPosts function
+  useEffect(() => {
+    const fetchData = async () => {
+      const { users } = await getAllPosts();
+      setUsers(users);  // Set fetched job data to state
+      setIsLoading(false);  // Set loading state to false once data is fetched
+    };
+
+    fetchData();
+  }, []);
+
+  const filteredJobs = users.filter(job => {
     const matchesCategory = selectedCategory ? job.category === selectedCategory : true;
     const matchesSearch =
       job.position.toLowerCase().includes(searchQuery) ||
@@ -29,15 +44,13 @@ const JobList = () => {
     return matchesCategory && matchesSearch;
   });
 
-  const [clickedJobs, setClickedJobs] = useState({});
-  const [toastMessage, setToastMessage] = useState('');
   if (toastMessage) {
     Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Applied Successfully",
+      position: 'top-end',
+      icon: 'success',
+      title: 'Applied Successfully',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   }
 
@@ -48,16 +61,18 @@ const JobList = () => {
         {searchQuery && ` — "${searchQuery}"`}
       </h3>
 
-      {filteredJobs.length === 0 ? (
+      {isLoading ? (
+        <p className="text-center text-gray-500 text-xl">Loading jobs...</p>
+      ) : filteredJobs.length === 0 ? (
         <p className="text-center text-gray-500 text-xl">No jobs found.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {filteredJobs.map(data => {
-            const percentage = calculateMatchPercentage(data.skills, skills);
+            const percentage = calculateMatchPercentage(data.skills, ['Next.js', 'React', 'PHP']);  // Example skills array
 
             return (
               <div
-                key={data.id}
+                key={data._id}
                 className="card w-[90%] mx-auto bg-base-100 card-xl border-blue-600 border-2 shadow-xl relative"
               >
                 <div className="card-body relative">
@@ -74,7 +89,9 @@ const JobList = () => {
                   </div>
 
                   <h2 className="card-title text-blue-500">{data.position}</h2>
-                  <Link href={data.website} target="_blank" className="text-gray-500 text-lg">{data.name}</Link>
+                  <Link href={data.website} target="_blank" className="text-gray-500 text-lg">
+                    {data.name}
+                  </Link>
 
                   <p className="font-bold text-base text-rose-600">
                     Requirements:
@@ -98,32 +115,28 @@ const JobList = () => {
                   </p>
 
                   <div className="justify-end card-actions mt-2">
-                    {/* <button className={`btn text-white w-full mx-auto ${percentage < 50 ? 'bg-red-600' : 'btn-info'}`} >
-                      Apply
-                    </button> */}
                     <button
                       onClick={() => {
-                        if (!clickedJobs[data.id]) {
-                          setClickedJobs(prev => ({ ...prev, [data.id]: true }));
+                        if (!clickedJobs[data._id]) {
+                          setClickedJobs(prev => ({ ...prev, [data._id]: true }));
                           setToastMessage(`You have applied to ${data.position} at ${data.name}`);
                           setTimeout(() => setToastMessage(''), 3000); // Hide toast after 3 seconds
                         }
                       }}
                       className={`btn text-white w-full mx-auto
-                      ${clickedJobs[data.id] ? 'bg-green-600' : percentage < 50 ? 'bg-red-600' : 'btn-info'}
-                      ${clickedJobs[data.id] ? 'opacity-100' : ''}`}
+                      ${clickedJobs[data._id] ? 'bg-green-600' : percentage < 50 ? 'bg-red-600' : 'btn-info'}
+                      ${clickedJobs[data._id] ? 'opacity-100' : ''}`}
                     >
-                      {clickedJobs[data.id] ? "Applied" : "Apply"}
+                      {clickedJobs[data._id] ? 'Applied' : 'Apply'}
                     </button>
-                
                   </div>
                 </div>
               </div>
             );
           })}
-        </div >
+        </div>
       )}
-    </div >
+    </div>
   );
 };
 
