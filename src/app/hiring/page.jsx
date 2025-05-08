@@ -1,11 +1,12 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import cseskills from '@/../public/cseskills.json';
 import categories from '@/../public/category.json';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const Page = () => {
+    const formRef = useRef(null);
     const [selectedSkills, setSelectedSkills] = useState([]);
     const [requirements, setRequirements] = useState([]);
     const [requirementInput, setRequirementInput] = useState('');
@@ -54,23 +55,31 @@ const Page = () => {
             skills: selectedSkills
         }
 
-        axios.post('http://localhost:3000/hiring/api', newHire)
-            .then(res =>
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Job Posted Successfully!!",
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            )
-            .catch(error =>
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong!",
-                })
-            )
+        try {
+            await axios.post('http://localhost:3000/hiring/api', newHire);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Job Posted Successfully!!",
+                showConfirmButton: false,
+                timer: 1500
+            });
+
+            // Reset the form and states
+            formRef.current.reset();
+            setSelectedSkills([]);
+            setRequirements([]);
+            setRequirementInput('');
+
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+            });
+        }
+
+
     };
 
     return (
@@ -78,7 +87,7 @@ const Page = () => {
             <div className='flex flex-col gap-5 mx-auto border-info rounded-2xl border-2 pt-10 md:p-20 w-96 md:w-[80%] lg:w-[50%]'>
                 <h3 className='text-3xl font-bold text-center text-info'>Hiring Form</h3>
 
-                <form onSubmit={handleCreate} className="flex flex-col gap-5">
+                <form onSubmit={handleCreate} className="flex flex-col gap-5" ref={formRef}>
                     <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Company Name' name="cname" />
                     <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Position Name' name="pname" />
                     <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Website Name' name="wname" />
