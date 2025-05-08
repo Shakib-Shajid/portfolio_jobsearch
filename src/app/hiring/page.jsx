@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import cseskills from '@/../public/cseskills.json';
 import categories from '@/../public/category.json';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Page = () => {
     const [selectedSkills, setSelectedSkills] = useState([]);
@@ -28,6 +29,13 @@ const Page = () => {
         }
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent form submission on Enter
+            addRequirement();   // Call the addRequirement function
+        }
+    };
+
     const removeRequirement = (req) => {
         setRequirements(requirements.filter(r => r !== req));
     };
@@ -46,9 +54,23 @@ const Page = () => {
             skills: selectedSkills
         }
 
-        axios.post('http://localhost:3000/hiring/api',newHire)
-        .then(res=>console.log(res))
-        .catch(error=>console.log(error))
+        axios.post('http://localhost:3000/hiring/api', newHire)
+            .then(res =>
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Job Posted Successfully!!",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            )
+            .catch(error =>
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+                })
+            )
     };
 
     return (
@@ -75,6 +97,7 @@ const Page = () => {
                             type="text"
                             value={requirementInput}
                             onChange={(e) => setRequirementInput(e.target.value)}
+                            onKeyDown={handleKeyDown}  // Added onKeyDown handler
                             className="input input-info border-2 rounded-xl w-full p-5 pr-12 focus:outline-none"
                             placeholder="Enter a requirement"
                         />

@@ -11,6 +11,7 @@ const Navbar = () => {
     const handleSearch = () => {
         if (search.trim()) {
             router.push(`/jobs?search=${encodeURIComponent(search.trim())}`);
+            setSearch('')
         }
     };
 
@@ -33,6 +34,7 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li><Link href="/">Home</Link></li>
                             <li><Link href="/jobs">Jobs</Link></li>
+                            <li><Link href="/hiring">Hiring</Link></li>
                         </ul>
                     </div>
                     <Link href="/" className="btn btn-ghost text-lg md:text-xl -ml-5 lg:ml-0">Portfolio & Job</Link>
@@ -41,6 +43,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex gap-5">
                     <Link href="/">Home</Link>
                     <Link href="/jobs">Jobs</Link>
+                    <Link href="/hiring">Hiring</Link>
                 </div>
 
                 <div className="flex gap-2 navbar-end relative">
