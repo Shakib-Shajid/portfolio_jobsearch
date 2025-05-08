@@ -3,10 +3,14 @@ import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
+import { useSearchParams } from "next/navigation";
 
 
 const Page = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectPath = searchParams.get("redirect") || "/";
+
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -32,9 +36,10 @@ const Page = () => {
         title: "Login Successful",
         showConfirmButton: false,
         timer: 1500,
-      }).then(() => {
-        router.push("/"); // redirect to protected route
-      });
+      })
+        .then(() => {
+          router.push(redirectPath); // redirect to protected route
+        });
     }
   };
 
