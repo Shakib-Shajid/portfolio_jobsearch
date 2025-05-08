@@ -26,6 +26,15 @@ const Navbar = () => {
         }
     };
 
+    const navLink = <>
+        <Link href="/">Home</Link>
+        <Link href="/jobs">Jobs</Link>
+        {
+            session?.status === "authenticated" &&
+            <Link href="/hiring">Hiring</Link>
+        }
+    </>
+
     return (
         <div>
             <div className="navbar">
@@ -37,23 +46,25 @@ const Navbar = () => {
                             </svg>
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><Link href="/">Home</Link></li>
+                            {/* <li><Link href="/">Home</Link></li>
                             <li><Link href="/jobs">Jobs</Link></li>
                             {
                                 session?.status === "authenticated" &&
                                 <li><Link href="/hiring">Hiring</Link></li>
-                            }
+                            } */}
+                           <li> {navLink}</li>
                         </ul>
                     </div>
                     <Link href="/" className="btn btn-ghost text-lg md:text-xl -ml-5 lg:ml-0">Portfolio & Job</Link>
                 </div>
 
                 <div className="navbar-center hidden lg:flex gap-5">
-                    <Link href="/">Home</Link>
+                    {/* <Link href="/">Home</Link>
                     <Link href="/jobs">Jobs</Link>
                     {
                         session?.status === "authenticated" && <Link href="/hiring">Hiring</Link>
-                    }
+                    } */}
+                    {navLink}
                 </div>
 
                 <div className="flex gap-2 navbar-end relative">
