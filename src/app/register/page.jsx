@@ -1,10 +1,13 @@
-"use client"
-import Link from 'next/link';
-import React from 'react';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+"use client";
+import { signIn } from "next-auth/react"; // Import signIn from next-auth
+import Link from "next/link";
+import React from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { useRouter } from "next/navigation"; // Import useRouter for redirection
 
-const page = () => {
+const Page = () => {
+  const router = useRouter();
 
   const handleSignUp = async (event) => {
     event.preventDefault();
@@ -14,28 +17,50 @@ const page = () => {
     const password = event.target.password.value;
     const rpassword = event.target.rpassword.value;
 
-
+    // Check if password and confirm password match
     if (password !== rpassword) {
       Swal.fire({
         icon: "error",
         title: "Password Mismatch",
         text: "Password and Confirm Password do not match.",
       });
-      return; // Stop further execution
+      return; // Stop further execution if passwords don't match
     }
+
     const newUser = { name, email, password };
 
     try {
-      const response = await axios.post("http://localhost:3000/register/api", newUser);
+      // Send user data to the registration API
+      const response = await axios.post("https://portfolio-jobsearch.vercel.app/register/api", newUser);
 
       if (response.status === 200) {
         event.target.reset();
+
         Swal.fire({
           position: "top-end",
           icon: "success",
           title: "User registered successfully!",
           showConfirmButton: false,
-          timer: 1500
+          timer: 1500,
+        }).then(async () => {
+          // Auto-login after successful registration
+          const res = await signIn("credentials", {
+            redirect: false,
+            email,
+            password,
+          });
+
+          if (res.ok) {
+            // Redirect to the previous page or default page after successful login
+            const redirectUrl = new URL(window.location.href).searchParams.get('redirect') || "/";
+            router.push(redirectUrl); // Redirect to the target page
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Login Failed",
+              text: "Something went wrong during login.",
+            });
+          }
         });
       }
     } catch (error) {
@@ -43,7 +68,7 @@ const page = () => {
         icon: "error",
         title: "Oops...",
         text: "Something went wrong!",
-        footer: '<a href="#">Why do I have this issue?</a>'
+        footer: '<a href="#">Why do I have this issue?</a>',
       });
     }
   };
@@ -59,26 +84,31 @@ const page = () => {
             <div className="card-body">
               <form className="fieldset" onSubmit={handleSignUp}>
                 <label className="label">Name</label>
-                <input type="text" className="input input-primary" placeholder="Name" name="name" />
+                <input type="text" className="input input-primary" placeholder="Name" name="name" required />
 
                 <label className="label">Email</label>
-                <input type="email" className="input input-primary" placeholder="Email" name="email" />
+                <input type="email" className="input input-primary" placeholder="Email" name="email" required />
 
                 <label className="label">Create a Password</label>
-                <input type="password" className="input input-primary" placeholder="Password" name="password" />
+                <input type="password" className="input input-primary" placeholder="Password" name="password" required />
 
                 <label className="label">Repeat Password</label>
-                <input type="password" className="input input-primary" placeholder="Password" name="rpassword" />
+                <input type="password" className="input input-primary" placeholder="Confirm Password" name="rpassword" required />
 
                 <fieldset className="fieldset">
-                  <legend className="fieldset-legend font-normal text-gray-500">Pick a image</legend>
+                  <legend className="fieldset-legend font-normal text-gray-500">Pick a Image</legend>
                   <input type="file" className="file-input input-primary" />
                   <label className="label">Max size 2MB</label>
                 </fieldset>
 
                 <button className="btn btn-primary mt-4 text-white">Register</button>
               </form>
-              <p className='text-xs'>Already have an account? <Link href="/login" className='text-primary font-bold'>Login Now</Link></p>
+              <p className="text-xs mt-2">
+                Already have an account?{" "}
+                <Link href="/login" className="text-primary font-bold">
+                  Login Now
+                </Link>
+              </p>
             </div>
           </div>
         </div>
@@ -87,4 +117,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
