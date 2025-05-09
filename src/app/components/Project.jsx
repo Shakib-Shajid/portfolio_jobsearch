@@ -2,8 +2,7 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import cseskills from '@/../public/cseskills.json';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+
 
 const emptyProject = {
     name: '',

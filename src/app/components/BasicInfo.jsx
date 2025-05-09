@@ -1,9 +1,6 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import cseskills from '@/../public/cseskills.json';
-import categories from '@/../public/category.json';
-import axios from 'axios';
-import Swal from 'sweetalert2';
 
 const MyInfo = () => {
 
@@ -43,23 +40,16 @@ const MyInfo = () => {
     };
 
 
-
     return (
         <div>
             <h3 className='text-3xl md:text-5xl font-bold text-center text-info mb-10'>Your Info</h3>
             <div className="flex flex-col gap-5" ref={formRef}>
-                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Name' />
-                <input type="email" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='email' />
-                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Current Company Name' />
-                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Current Company Designation' />
-                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Company Website' name="wname" />
+                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Name' name="fname" />
+                <input type="email" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='email' name="email" />
+                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Current Company Name' name="comname" />
+                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Current Company Designation' name="designation" />
+                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Company Website' name="website" />
 
-                <select defaultValue="Select Category" className="select input-info border-2 rounded-xl w-80 md:w-full mx-auto text-gray-400" name="category">
-                    <option disabled={true}>Select Category</option>
-                    {categories.map((category, index) => (
-                        <option key={index}>{category}</option>
-                    ))}
-                </select>
 
                 {/* Requirement Input + Button */}
                 <div className="relative w-80 md:w-full mx-auto">
@@ -105,10 +95,12 @@ const MyInfo = () => {
                     ))}
                 </div>
 
-                <h3 className='text-3xl md:text-5xl font-bold text-blue-600 text-center my-3'>About Myself</h3>
-                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Your Expertice like frontend, backend (Show as title)' />
+                <h3 className='text-3xl md:text-5xl font-bold text-blue-600 text-center my-3' name="title">About Myself</h3>
+                <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Your Expertice like frontend, backend (Show as title)' name="about" />
 
                 <textarea placeholder="About yourself" className="text-sm textarea textarea-lg input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5"></textarea>
+
+                {/* <button className='btn btn-success my-10 text-white'>Submit</button> */}
             </div>
         </div>
     );

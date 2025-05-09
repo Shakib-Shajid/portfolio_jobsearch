@@ -1,8 +1,7 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import cseskills from '@/../public/cseskills.json';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+
 
 const Experience = () => {
     const formRef = useRef(null);
@@ -57,7 +56,9 @@ const Experience = () => {
         setExperiences([...experiences, { cname: '', pname: '', start: '', end: '', requirements: [], selectedSkills: [], requirementInput: '' }]);
     };
 
-    
+
+
+
     return (
         <div>
             <div className="flex flex-col gap-5" ref={formRef}>
@@ -153,3 +154,4 @@ const Experience = () => {
 };
 
 export default Experience;
+

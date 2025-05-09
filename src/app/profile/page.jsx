@@ -19,7 +19,7 @@ const page = () => {
         <div>
 
             <div className='flex gap-5 flex-col md:flex-row mt-5 justify-center w-[80%] mx-auto md:w-[90%] lg:w-full'>
-                <img src="https://rb.gy/c28gf3" className="max-w-sm w-80 lg:w-full shadow-2xl border-blue-700 rounded-full border-4" alt="" />
+                <img src="https://rb.gy/c28gf3" className="max-w-md w-80 lg:w-full shadow-2xl border-blue-700 rounded-full border-4" alt="" />
                 <div className="bg-white overflow-hidden shadow rounded-lg border md:w-full lg:w-1/3">
                     <div className="px-4 py-5 sm:px-4">
                         <h3 className="text-lg leading-6 font-bold text-green-900">
@@ -37,6 +37,15 @@ const page = () => {
                                 </dt>
                                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                     {pName}
+                                </dd>
+                            </div>
+                            
+                            <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt className="text-sm font-medium text-gray-500">
+                                    Email
+                                </dt>
+                                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    {email}
                                 </dd>
                             </div>
 
