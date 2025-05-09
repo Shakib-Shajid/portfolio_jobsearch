@@ -57,7 +57,7 @@ const Page = () => {
         }
 
         try {
-            await axios.post('https://portfolio-jobsearch.vercel.app/hiring/api', newHire);
+            await axios.post('http://localhost:3000/hiring/api', newHire);
             Swal.fire({
                 position: "top-end",
                 icon: "success",
@@ -90,7 +90,7 @@ const Page = () => {
                 <form onSubmit={handleCreate} className="flex flex-col gap-5" ref={formRef}>
                     <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Company Name' name="cname" />
                     <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Position Name' name="pname" />
-                    <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Website Name' name="wname" />
+                    <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Company Website' name="wname" />
                     <input type="email" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Company Email' name="email" />
                     <input type="number" className='input input-info border-2 rounded-xl w-80 md:w-96 mx-auto p-5' placeholder='Salary' name="salary" />
 

@@ -24,16 +24,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-7xl mx-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-7xl mx-auto flex flex-col min-h-screen`}
       >
         <Suspense>
           <AuthProvider>
-            <Navbar />
-            {children}
+            <div className="flex-1">
+              <Navbar />
+              {children}
+            </div>
             <Footer />
           </AuthProvider>
         </Suspense>
       </body>
-    </html >
+    </html>
   );
 }
