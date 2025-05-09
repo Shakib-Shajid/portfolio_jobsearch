@@ -64,6 +64,8 @@ const Page = () => {
                 <button type="submit" className="btn btn-success mt-4 text-white">Login</button>
               </form>
               <p className='text-xs mt-2'>Don't have an account? <Link href="/register" className='text-green-500 font-bold'>Register Now</Link></p>
+
+              <p>Email: testing@gmail.com | password: 123456</p>
             </div>
           </div>
         </div>

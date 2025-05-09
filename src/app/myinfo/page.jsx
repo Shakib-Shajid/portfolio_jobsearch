@@ -1,22 +1,5 @@
-// import BasicInfo from '../components/BasicInfo';
-// import Experience from '../components/Experience';
-// import Project from '../components/Project';
 
-// const Page = () => {
 
-//     return (
-//         <div className='flex flex-col justify-center border-info rounded-2xl border-2 pt-10 md:p-20 w-96 md:w-[80%] lg:w-[50%] mx-auto'>
-//             <div className='flex flex-col gap-5'>
-//                 <BasicInfo />
-//                 <Experience />
-//                 <Project />
-//             </div>
-//             <button className='btn btn-info my-10 text-white'>Submit</button>
-//         </div>
-//     );
-// };
-
-// export default Page;
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'; // Import useRouter

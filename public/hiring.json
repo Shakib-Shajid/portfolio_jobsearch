@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "name": "SkyBridge Technologies",
+      "name": "BACD Technologies",
       "position": "Junior Engineer",
       "website": "http://google.com",
       "category": "Web Development",
@@ -17,7 +17,7 @@
     },
     {
       "id": 2,
-      "name": "QuantumPixel Labs",
+      "name": "Quantumhdbc Labs",
       "position": "Frontend Developer",
       "website": "http://google.com",
       "category": "Web Development",
@@ -33,7 +33,7 @@
     },
     {
       "id": 3,
-      "name": "CoreStack Solutions",
+      "name": "Coreiondes Solutions",
       "position": "Backend Developer",
       "website": "http://google.com",
       "category": "Software Development",
@@ -49,7 +49,7 @@
     },
     {
       "id": 4,
-      "name": "NextVerse Tech",
+      "name": "NextKsease Tech",
       "position": "Full Stack Developer",
       "website": "http://google.com",
       "category": "Software Development",
@@ -65,7 +65,7 @@
     },
     {
       "id": 5,
-      "name": "PixelLoop Studio",
+      "name": "Pixelforsa Studio",
       "position": "UI/UX Engineer",
       "website": "http://google.com",
       "category": "UI/UX Design",
@@ -81,7 +81,7 @@
     },
     {
       "id": 6,
-      "name": "CloudMorph Labs",
+      "name": "CloudGrws Labs",
       "position": "DevOps Engineer",
       "website": "http://google.com",
       "category": "DevOps",
@@ -97,7 +97,7 @@
     },
     {
       "id": 7,
-      "name": "AppNinja Creations",
+      "name": "AppNanwsdf Creations",
       "position": "Mobile App Developer",
       "website": "http://google.com",
       "category": "Mobile App Development",
@@ -113,7 +113,7 @@
     },
     {
       "id": 8,
-      "name": "TestHive Systems",
+      "name": "TestVgrs Systems",
       "position": "Software Tester",
       "website": "http://google.com",
       "category": "QA & Testing",
@@ -129,7 +129,7 @@
     },
     {
       "id": 9,
-      "name": "DataNest Analytics",
+      "name": "DataMaslest Analytics",
       "position": "Data Engineer",
       "website": "http://google.com",
       "category": "Data Science",
@@ -145,7 +145,7 @@
     },
     {
       "id": 10,
-      "name": "CloudForge Networks",
+      "name": "CloudHbfrge Networks",
       "position": "Cloud Engineer",
       "website": "http://google.com",
       "category": "Cloud Computing",
@@ -161,7 +161,7 @@
     },
     {
         "id": 11,
-        "name": "SecureNet Corp",
+        "name": "Securscnhet Corp",
         "position": "Cybersecurity Analyst",
         "website": "http://google.com",
         "category": "Cybersecurity",
@@ -177,7 +177,7 @@
       },
       {
         "id": 12,
-        "name": "AI Nova Systems",
+        "name": "AI Wchfnr Sysastems",
         "position": "AI Engineer",
         "website": "http://google.com",
         "category": "Artificial Intelligence",
@@ -193,7 +193,7 @@
       },
       {
         "id": 13,
-        "name": "BlockCrafters",
+        "name": "BlockCscnters",
         "position": "Blockchain Developer",
         "website": "http://google.com",
         "category": "Blockchain Technology",
@@ -209,7 +209,7 @@
       },
       {
         "id": 14,
-        "name": "ML Pathway Labs",
+        "name": "ML Patcdky Labs",
         "position": "Machine Learning Engineer",
         "website": "http://google.com",
         "category": "Machine Learning",
@@ -225,7 +225,7 @@
       },
       {
         "id": 15,
-        "name": "NetWise Solutions",
+        "name": "NetWiscfjfe Solutions",
         "position": "Network Administrator",
         "website": "http://google.com",
         "category": "Network Administration",
@@ -241,7 +241,7 @@
       },
       {
         "id": 16,
-        "name": "DBMatrix Corp",
+        "name": "DBmkhftrix Corsp",
         "position": "Database Administrator",
         "website": "http://google.com",
         "category": "Database Management",
@@ -257,7 +257,7 @@
       },
       {
         "id": 17,
-        "name": "ByteLogic Gaming",
+        "name": "BmjvfgLogic Gaming",
         "position": "Game Developer",
         "website": "http://google.com",
         "category": "Game Development",
@@ -273,7 +273,7 @@
       },
       {
         "id": 18,
-        "name": "ChipCore Innovations",
+        "name": "ChipnJokje Innovadetions",
         "position": "Embedded Systems Engineer",
         "website": "http://google.com",
         "category": "Embedded Systems",
@@ -289,7 +289,7 @@
       },
       {
         "id": 19,
-        "name": "InsightGrid Solutions",
+        "name": "InsignjMlrid Solutions",
         "position": "BI Developer",
         "website": "http://google.com",
         "category": "Business Intelligence",
@@ -305,7 +305,7 @@
       },
       {
         "id": 20,
-        "name": "TechWise Consultants",
+        "name": "TechKolsse Consultants",
         "position": "IT Consultant",
         "website": "http://google.com",
         "category": "IT Consultancy",
@@ -321,7 +321,7 @@
       },
       {
         "id": 21,
-        "name": "SysOps Global",
+        "name": "SyasOhcjds Global",
         "position": "System Administrator",
         "website": "http://google.com",
         "category": "System Administration",
@@ -337,7 +337,7 @@
       },
       {
         "id": 22,
-        "name": "TechAssist Inc.",
+        "name": "TecedSbcist Inc.",
         "position": "IT Support Specialist",
         "website": "http://google.com",
         "category": "IT Support",
