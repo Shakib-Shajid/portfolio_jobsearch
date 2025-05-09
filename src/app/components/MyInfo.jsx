@@ -42,51 +42,12 @@ const MyInfo = () => {
         setRequirements(requirements.filter(r => r !== req));
     };
 
-    const handleCreate = async (event) => {
-        event.preventDefault();
-        // Prepare form data here or handle API logic
-        const evTar = event.target;
-        const newHire = {
-            name: evTar.cname.value,
-            position: evTar.pname.value,
-            website: evTar.wname.value,
-            email: evTar.email.value,
-            category: evTar.category.value,
-            salary: evTar.salary.value,
-            requirements: requirements,
-            skills: selectedSkills
-        }
 
-        try {
-            await axios.post('http://localhost:3000/hiring/api', newHire);
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Job Posted Successfully!!",
-                showConfirmButton: false,
-                timer: 1500
-            });
-
-            // Reset the form and states
-            formRef.current.reset();
-            setSelectedSkills([]);
-            setRequirements([]);
-            setRequirementInput('');
-
-        } catch (error) {
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Something went wrong!",
-            });
-        }
-
-    };
 
     return (
         <div>
             <h3 className='text-3xl md:text-5xl font-bold text-center text-info mb-10'>Your Info</h3>
-            <form onSubmit={handleCreate} className="flex flex-col gap-5" ref={formRef}>
+            <div className="flex flex-col gap-5" ref={formRef}>
                 <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Name' />
                 <input type="email" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='email' />
                 <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Current Company Name' />
@@ -148,7 +109,7 @@ const MyInfo = () => {
                 <input type="text" className='input input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5' placeholder='Your Expertice like frontend, backend (Show as title)' />
 
                 <textarea placeholder="About yourself" className="text-sm textarea textarea-lg input-info border-2 rounded-xl w-80 md:w-full mx-auto p-5"></textarea>
-            </form>
+            </div>
         </div>
     );
 };

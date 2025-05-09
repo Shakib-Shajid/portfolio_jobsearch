@@ -57,81 +57,43 @@ const Experience = () => {
         setExperiences([...experiences, { cname: '', pname: '', start: '', end: '', requirements: [], selectedSkills: [], requirementInput: '' }]);
     };
 
-    const handleCreate = async (event) => {
-        event.preventDefault();
-
-        try {
-            for (let exp of experiences) {
-                const newExperience = {
-                    cname: exp.cname,
-                    pname: exp.pname,
-                    start: exp.start,
-                    end: exp.end,
-                    requirements: exp.requirements,
-                    skills: exp.selectedSkills,
-                };
-
-                await axios.post('http://localhost:3000/experience/api', newExperience);
-            }
-
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Experiences Submitted!",
-                showConfirmButton: false,
-                timer: 1500
-            });
-
-            formRef.current.reset();
-            setExperiences([
-                { cname: '', pname: '', start: '', end: '', requirements: [], selectedSkills: [], requirementInput: '' }
-            ]);
-
-        } catch (error) {
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Something went wrong!",
-            });
-        }
-    };
-
+    
     return (
         <div>
-            <form onSubmit={handleCreate} className="flex flex-col gap-5" ref={formRef}>
+            <div className="flex flex-col gap-5" ref={formRef}>
                 <h3 className='text-3xl md:text-5xl font-bold text-violet-600 text-center my-5'>Experience</h3>
 
                 {experiences.map((exp, index) => (
-                    <div key={index} className=''>
+                    <div key={index} className='w-80 md:w-full mx-auto'>
                         <input
                             type="text"
-                            className='input input-info border-2 rounded-xl w-full mb-3 p-5'
+                            className='input input-info border-2 rounded-xl w-80 mx-auto md:w-full mb-3 p-5'
                             placeholder='Company Name'
                             value={exp.cname}
                             onChange={e => handleExperienceChange(index, 'cname', e.target.value)}
                         />
                         <input
                             type="text"
-                            className='input input-info border-2 rounded-xl w-full mb-3 p-5'
+                            className='input input-info border-2 rounded-xl w-80 mx-auto md:w-full mb-3 p-5'
                             placeholder='Position Name'
                             value={exp.pname}
                             onChange={e => handleExperienceChange(index, 'pname', e.target.value)}
                         />
                         <input
                             type="date"
-                            className='input input-info border-2 rounded-xl w-full mb-3 p-5'
+                            className='input input-info border-2 rounded-xl w-80 mx-auto md:w-full mb-3 p-5'
                             value={exp.start}
                             onChange={e => handleExperienceChange(index, 'start', e.target.value)}
                         />
                         <input
                             type="date"
-                            className='input input-info border-2 rounded-xl w-full mb-3 p-5'
+                            className='input input-info border-2 rounded-xl w-80 mx-auto md:w-full mb-3 p-5'
                             value={exp.end}
                             onChange={e => handleExperienceChange(index, 'end', e.target.value)}
                         />
 
                         {/* Requirement Input */}
-                        <div className="relative w-full mb-3">
+                        <div className="relative w-80 md:w-full mb-3">
                             <input
                                 type="text"
                                 value={exp.requirementInput}
@@ -160,7 +122,7 @@ const Experience = () => {
                         <select
                             onChange={(e) => handleSkillSelect(index, e.target.value)}
                             defaultValue="Pick required skills"
-                            className="select input-info border-2 rounded-xl w-full text-gray-400 mb-3"
+                            className="select input-info border-2 rounded-xl w-80 md:w-full text-gray-400 mb-3"
                         >
                             <option disabled>Pick required skills</option>
                             {cseskills.map((skill, i) => (
@@ -185,7 +147,7 @@ const Experience = () => {
 
                 {/* Submit Button */}
                 {/* <button type="submit" className="btn btn-success w-60 mx-auto mt-4">Submit</button> */}
-            </form>
+            </div>
         </div>
     );
 };
