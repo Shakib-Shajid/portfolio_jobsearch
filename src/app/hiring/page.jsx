@@ -57,7 +57,7 @@ const Page = () => {
         }
 
         try {
-            await axios.post('http://localhost:3000/hiring/api', newHire);
+            await axios.post('https://portfolio-jobsearch.vercel.app/hiring/api', newHire);
             Swal.fire({
                 position: "top-end",
                 icon: "success",

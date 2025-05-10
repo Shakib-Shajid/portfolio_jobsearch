@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Swal from 'sweetalert2';
 import getAllPosts from '@/lib/getAllPost';
+import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 const calculateMatchPercentage = (jobSkills, userSkills) => {
   if (!jobSkills?.length || !userSkills?.length) return 0;
@@ -13,6 +15,7 @@ const calculateMatchPercentage = (jobSkills, userSkills) => {
 };
 
 const JobList = () => {
+  const session = useSession();
   const searchParams = useSearchParams();
   const selectedCategory = searchParams.get('category');
   const searchQuery = searchParams.get('search')?.toLowerCase() || '';
@@ -127,7 +130,10 @@ const JobList = () => {
                   <p className='text-lg text-violet-600 font-bold'>Salary: {new Intl.NumberFormat('en-IN').format(data.salary)} BDT</p>
 
                   <div className="justify-end card-actions mt-2">
-                    <button
+
+                    {
+                      session?.status === "authenticated" &&
+                       <button
                       onClick={() => {
                         if (!clickedJobs[data._id]) {
                           setClickedJobs(prev => ({ ...prev, [data._id]: true }));
@@ -141,6 +147,37 @@ const JobList = () => {
                     >
                       {clickedJobs[data._id] ? 'Applied' : 'Apply'}
                     </button>
+                    }
+
+                    {
+                      session?.status === 'loading' &&
+                      <h6>Loading....</h6>
+                    }
+
+
+                    {session?.status === 'unauthenticated' &&
+                      <Link href="/login" className="btn text-white btn-info w-full mx-auto">Login to Apply</Link>
+                    }
+
+
+
+
+
+
+                    {/* <button
+                      onClick={() => {
+                        if (!clickedJobs[data._id]) {
+                          setClickedJobs(prev => ({ ...prev, [data._id]: true }));
+                          setToastMessage(`You have applied to ${data.position} at ${data.name}`);
+                          setTimeout(() => setToastMessage(''), 3000);
+                        }
+                      }}
+                      className={`btn text-white w-full mx-auto
+                      ${clickedJobs[data._id] ? 'bg-green-600' : percentage < 50 ? 'bg-red-600' : 'btn-info'}
+                      ${clickedJobs[data._id] ? 'opacity-100' : ''}`}
+                    >
+                      {clickedJobs[data._id] ? 'Applied' : 'Apply'}
+                    </button> */}
                   </div>
                 </div>
               </div>

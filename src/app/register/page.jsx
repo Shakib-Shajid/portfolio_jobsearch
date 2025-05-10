@@ -31,7 +31,7 @@ const Page = () => {
 
     try {
       // Send user data to the registration API
-      const response = await axios.post("http://localhost:3000/register/api", newUser);
+      const response = await axios.post("https://portfolio-jobsearch.vercel.app/register/api", newUser);
 
       if (response.status === 200) {
         event.target.reset();
